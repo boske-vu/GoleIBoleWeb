@@ -1,0 +1,48 @@
+<div>
+  <form [formGroup] = "registracijaForm" (ngSubmit)="register()">
+    <label>
+      First Name:
+      <input type="text" formControlerName="firstName" required>
+    </label>
+    <br>
+
+    <label>
+      Last Name:
+      <input type="text" formControlerName="lastName">
+    </label>
+    <br>
+
+    <label>
+      User Name:
+      <input type="text" formControlerName="username">
+    </label>
+    <br>
+
+    <label>
+      Email:
+      <input type="text" formControlerName="email">
+    </label>
+    <br>
+
+    <label>
+        Password:
+        <input type="password" formControlerName="password">
+    </label>
+    <br>
+
+    <label>
+          Confirm Password:
+        <input type="password" formControlerName="confirmPassword">
+    </label>
+    <br>
+
+    <label>
+        Date:
+      <input type="date" formControlerName="date">
+  </label>
+  <br>
+
+  <input type="submit" class="fadeIn fourth"/>
+
+  </form>
+</div>

@@ -24,7 +24,7 @@ namespace WebApp.Persistence
         public DbSet<Vehicle> Vehicles { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("name=DefaultConnection", throwIfV1Schema: false)
         {
         }
         
