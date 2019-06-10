@@ -25,6 +25,6 @@ export class AuthHttpService{
     }
 
     registration(data: User){
-        return this.http.post<any>(this.base_url + "api/Account/Register", data).subscribe();
+        return this.http.post<any>(this.base_url + "/api/Account/Register", data).subscribe();
     }
 }

@@ -14,6 +14,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using WebApp.Models;
+using WebApp.Persistence.UnitOfWork;
 using WebApp.Providers;
 using WebApp.Results;
 
@@ -26,8 +27,11 @@ namespace WebApp.Controllers
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
 
-        public AccountController()
+        private readonly IUnitOfWork unitOfWork;
+
+        public AccountController(IUnitOfWork unitOfWork)
         {
+            this.unitOfWork = unitOfWork;
         }
 
         public AccountController(ApplicationUserManager userManager,
@@ -328,7 +332,7 @@ namespace WebApp.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() {Id=model.Email,PasswordHash = ApplicationUser.HashPassword(model.Password), UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword, TypeOfUser = model.TypeOfUser /*Tip = "Student", TypeId = unitOfWork.userTypeRepository.GetIdFromString("Student")*/ };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

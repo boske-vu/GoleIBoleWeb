@@ -1,48 +1,63 @@
-<div>
+    
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="registration-command.component.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
   <form [formGroup] = "registracijaForm" (ngSubmit)="register()">
     <label>
       First Name:
-      <input type="text" formControlerName="firstName" required>
+      <input type="text" formControlName="firstName" required>
     </label>
     <br>
 
     <label>
       Last Name:
-      <input type="text" formControlerName="lastName">
+      <input type="text" formControlName="lastName">
     </label>
     <br>
 
     <label>
       User Name:
-      <input type="text" formControlerName="username">
+      <input type="text" formControlName="username">
     </label>
     <br>
 
     <label>
-      Email:
-      <input type="text" formControlerName="email">
+        &nbsp;  &nbsp; &nbsp; &nbsp;Email: &nbsp;
+      <input type="text" formControlName="email">
     </label>
     <br>
 
     <label>
         Password:
-        <input type="password" formControlerName="password">
+        <input type="password" formControlName="password">
     </label>
     <br>
 
     <label>
           Confirm Password:
-        <input type="password" formControlerName="confirmPassword">
+        <input type="password" formControlName="confirmPassword">
     </label>
     <br>
 
     <label>
-        Date:
-      <input type="date" formControlerName="date">
+        RegularniKorisnik/Student/Penzioner:
+      <input type="text" formControlName="typeOfUser">
+  </label>
+
+  <br>
+
+    <label>
+        &nbsp;  &nbsp; &nbsp; &nbsp; Date:
+      <input type="date" formControlName="date">
   </label>
   <br>
 
   <input type="submit" class="fadeIn fourth"/>
 
   </form>
+  </div>
 </div>

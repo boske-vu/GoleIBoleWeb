@@ -14,13 +14,14 @@ import {FormArray} from '@angular/forms';
 })
 export class RegistrationCommandComponent implements OnInit {
   registracijaForm = this.fb.group({
-    firsName: ['', Validators.required],
+    firstName: ['', Validators.required],
     lastName: ['',Validators.required],
     username: ['',Validators.required],
     password: ['', Validators.required],
     confirmPassword: ['', Validators.required],
     email: ['', Validators.required],
-    date: ['', Validators.required]
+    date: ['', Validators.required],
+    typeOfUser: ['',Validators.required]
   });
 
   constructor(private http: AuthHttpService, private fb:FormBuilder, private router: Router) { }

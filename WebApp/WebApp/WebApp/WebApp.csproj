@@ -263,6 +263,18 @@
     <Compile Include="Migrations\201906061336005_BusMigration.Designer.cs">
       <DependentUpon>201906061336005_BusMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906071522372_NewMigration.cs" />
+    <Compile Include="Migrations\201906071522372_NewMigration.Designer.cs">
+      <DependentUpon>201906071522372_NewMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906081344572_TypeMigration.cs" />
+    <Compile Include="Migrations\201906081344572_TypeMigration.Designer.cs">
+      <DependentUpon>201906081344572_TypeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906081417396_newest.cs" />
+    <Compile Include="Migrations\201906081417396_newest.Designer.cs">
+      <DependentUpon>201906081417396_newest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -279,8 +291,30 @@
     <Compile Include="Models\UserType.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
+    <Compile Include="Persistence\Repository\BusLineRepository.cs" />
+    <Compile Include="Persistence\Repository\DayTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\IBusLineRepository.cs" />
+    <Compile Include="Persistence\Repository\IDayTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\IPriceListRepository.cs" />
     <Compile Include="Persistence\Repository\IRepository.cs" />
+    <Compile Include="Persistence\Repository\IStationRepository.cs" />
+    <Compile Include="Persistence\Repository\ITicketPriceRepository.cs" />
+    <Compile Include="Persistence\Repository\ITicketRepository.cs" />
+    <Compile Include="Persistence\Repository\ITicketTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\ITimeTableRepository.cs" />
+    <Compile Include="Persistence\Repository\ITimeTableTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\IUserTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\IVehicleRepository.cs" />
+    <Compile Include="Persistence\Repository\PriceListRepository.cs" />
     <Compile Include="Persistence\Repository\Repository.cs" />
+    <Compile Include="Persistence\Repository\StationRepository.cs" />
+    <Compile Include="Persistence\Repository\TicketPriceRepository.cs" />
+    <Compile Include="Persistence\Repository\TicketRepository.cs" />
+    <Compile Include="Persistence\Repository\TicketTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\TimeTableRepository.cs" />
+    <Compile Include="Persistence\Repository\TimeTableTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\UserTypeRepository.cs" />
+    <Compile Include="Persistence\Repository\VehicleRepository.cs" />
     <Compile Include="Persistence\UnitOfWork\DemoUnitOfWork.cs" />
     <Compile Include="Persistence\UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -386,6 +420,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906061336005_BusMigration.resx">
       <DependentUpon>201906061336005_BusMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906071522372_NewMigration.resx">
+      <DependentUpon>201906071522372_NewMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906081344572_TypeMigration.resx">
+      <DependentUpon>201906081344572_TypeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906081417396_newest.resx">
+      <DependentUpon>201906081417396_newest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

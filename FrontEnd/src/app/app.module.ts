@@ -15,11 +15,18 @@ import { AuthHttpService } from './services/http/auth.service';
 import {ReactiveFormsModule} from '@angular/forms'
 import { RegistrationCommandComponent } from './registration/registration-command/registration-command.component';
 import { from } from 'rxjs';
+import { LinkoviComponent } from './linkovi/linkovi.component';
+import { BusLinesComponent } from './bus-lines/bus-lines.component';
+import { RedvoznjeComponent } from './redvoznje/redvoznje.component';
+import { CenovnikComponent } from './cenovnik/cenovnik.component';
 
 const routes : Routes = [
   {path:"home",component: HomeComponent},
   {path:"login",component: LoginComponent},
+  {path: "bus-lines", component: BusLinesComponent},
   {path:"registration",component: RegistrationCommandComponent},
+  {path:"redvoznje", component: RedvoznjeComponent},
+  {path:"cenovnik", component: CenovnikComponent},
   {path:"",component:HomeComponent,pathMatch:"full"},
   {path:"**",redirectTo:"login"}
 ]
@@ -31,7 +38,11 @@ const routes : Routes = [
     KomponentaComponent,
     HomeComponent,
     LoginComponent,
-    RegistrationCommandComponent
+    RegistrationCommandComponent,
+    LinkoviComponent,
+    BusLinesComponent,
+    RedvoznjeComponent,
+    CenovnikComponent
   ],
   imports: [
     BrowserModule,

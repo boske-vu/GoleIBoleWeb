@@ -11,4 +11,5 @@ export class User{
     email:string
     confirmpassword:string
     date:string
+    typeOfUser:string
 }
