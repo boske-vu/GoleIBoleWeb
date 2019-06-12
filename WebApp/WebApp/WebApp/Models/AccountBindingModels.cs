@@ -74,7 +74,7 @@ namespace WebApp.Models
         [Display(Name = "PhoneNumber")]
         public string PhoneNumber { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "ImageUrl")]
         public string ImageUrl { get; set; }
 

@@ -43,7 +43,7 @@ export class CenovnikComponent implements OnInit {
   }
 
   getCenaKarte(){
-    console.log("selektovana karta: " + this.selectedTip);
+    console.log("selektovana karta44: " + this.selectedTip);
     this.http.getCene(this.selectedTip,this.userType).subscribe((data) => {
       this.cena = data;
       err => console.log(err);
@@ -51,9 +51,11 @@ export class CenovnikComponent implements OnInit {
   }
   
   kupiKartu(){
+    console.log("selektovana karta2: " + this.selectedTip);
+
     this.karta.Price = this.cena;
     this.karta.Username = localStorage.loggedUser;
-    
+    this.karta.TipKarte = this.selectedTip;
     this.http.kupiKartu(this.karta).subscribe((data) => {
       if(data == "uspesno")
       {

@@ -20,6 +20,7 @@ import { BusLinesComponent } from './bus-lines/bus-lines.component';
 import { RedvoznjeComponent } from './redvoznje/redvoznje.component';
 import { CenovnikComponent } from './cenovnik/cenovnik.component';
 import {CenovnikHttpService} from './services/cenovnik.service';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes : Routes = [
@@ -45,6 +46,7 @@ const routes : Routes = [
     BusLinesComponent,
     RedvoznjeComponent,
     CenovnikComponent,
+    UpdateUserComponent,
     
   ],
   imports: [

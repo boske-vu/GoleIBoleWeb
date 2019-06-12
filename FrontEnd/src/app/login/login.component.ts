@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../komponenta/osoba';
 import { AuthHttpService } from '../services/http/auth.service';
-import { NgForm } from '@angular/forms';
-
+import { NgForm ,FormBuilder, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,13 +10,30 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: AuthHttpService) { }
+
+  loginForm = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required]
+  });
+
+  constructor(private http:AuthHttpService, private router: Router,private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
-  login(user: User,form: NgForm){
-    this.http.logIn(user.username,user.password);
-    form.reset();
+  login(){
+    let user: User = this.loginForm.value;
+    this.http.logIn(user.username,user.password).subscribe(temp => {
+      if(temp == "uspesno")
+      {
+        console.log(temp);
+        this.router.navigate(["/home"])
+      }
+      else if(temp == "neuspesno")
+      {
+        console.log(temp);
+        this.router.navigate(["/login"])
+      }
+    });
   }
 }
