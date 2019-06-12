@@ -150,7 +150,6 @@ C:\Users\e3100-2015\Desktop\Clone3619\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debu
 C:\Users\e3100-2015\Desktop\Clone3619\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\e3100-2015\Desktop\Clone3619\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.InitialMigration.resources
-C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.BusMigration.resources
 C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.cache
 C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.CoreCompileInputs.cache
 C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\bin\WebApp.dll.config
@@ -302,6 +301,4 @@ C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp
 C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
-C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.NewMigration.resources
-C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.TypeMigration.resources
-C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.newest.resources
+C:\Users\boske\OneDrive\Desktop\Web2-TimeTable\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.nova.resources

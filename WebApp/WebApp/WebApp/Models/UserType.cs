@@ -6,13 +6,7 @@ using System.Web;
 
 namespace WebApp.Models
 {
-    enum usertypes
-    {
-        UnRegistered,
-        Passenger,
-        Controlor,
-        Administrator
-    }
+ 
     public class UserType
     {
         public int Id { get; set; }

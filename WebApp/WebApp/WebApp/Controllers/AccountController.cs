@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -14,6 +15,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using WebApp.Models;
+using WebApp.Persistence;
 using WebApp.Persistence.UnitOfWork;
 using WebApp.Providers;
 using WebApp.Results;
@@ -26,6 +28,7 @@ namespace WebApp.Controllers
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         private readonly IUnitOfWork unitOfWork;
 
@@ -322,6 +325,7 @@ namespace WebApp.Controllers
             return logins;
         }
 
+
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
@@ -332,7 +336,7 @@ namespace WebApp.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() {Id=model.Email,PasswordHash = ApplicationUser.HashPassword(model.Password), UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword, TypeOfUser = model.TypeOfUser /*Tip = "Student", TypeId = unitOfWork.userTypeRepository.GetIdFromString("Student")*/ };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, Password = model.Password, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword, TypeId = 1, VerificateAcc = 0, Address = model.Address, ImageUrl = model.ImageUrl, PhoneNumber = model.PhoneNumber/*Id=model.Email,PasswordHash = ApplicationUser.HashPassword(model.Password), UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword*//*TypeOfUser = model.TypeOfUser*/ /*Tip = "Student", TypeId = unitOfWork.userTypeRepository.GetIdFromString("Student")*/ };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

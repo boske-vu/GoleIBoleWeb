@@ -44,17 +44,32 @@
     <br>
 
     <label>
-        RegularniKorisnik/Student/Penzioner:
-      <input type="text" formControlName="typeOfUser">
-  </label>
-
-  <br>
-
-    <label>
         &nbsp;  &nbsp; &nbsp; &nbsp; Date:
       <input type="date" formControlName="date">
   </label>
   <br>
+
+  <label>
+     Address:
+  <input type="text" formControlName="address">
+</label>
+<br>
+
+<label>
+   PhoneNumber:
+<input type="number" formControlName="phoneNumber">
+</label>
+<br>
+
+<div class="form-group col-md-6">
+  <label for="image" class="col-sm-2">Dokument</label>
+  <!-- <input type="file" class="form-control-file" formControlName="ImageUpload" id="FormControlFile1"> -->
+  <input #file type="file" accept='image/*' formControlName="imageUrl" (change)="preview(file.files)" />
+  <img [src]="imgURL" height="200" *ngIf="imgURL">
+  <br>
+  <!-- {{imgURL}}
+  {{imageUrl}} -->
+</div>
 
   <input type="submit" class="fadeIn fourth"/>
 

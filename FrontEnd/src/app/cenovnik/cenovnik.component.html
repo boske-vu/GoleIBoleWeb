@@ -1,12 +1,15 @@
-<nav class="navbar navbar-expand-lg">
-    <div>
-      <ul  class="navbar-nav">
-        <li class="active">
-          <a routerLink="/cenovnik" class="nav-link">VREMENSKA</a>
-          <a routerLink="/cenovnik" class="nav-link">DNEVNA</a>
-          <a routerLink="/cenovnik" class="nav-link">MESECNA</a>
-          <a routerLink="/cenovnik" class="nav-link">GODISNJA</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<p>
+    <select [(ngModel)]="selectedTip">
+      <option *ngFor="let t of karte">
+        {{t}} 
+      </option>
+    </select>
+    <br/>
+    <button (click)="getCenaKarte()"> Prikazi cenu ove karte! </button>
+    <br/>
+    Cena karte: {{cena}}
+    <br/>
+    <button (click)="kupiKartu()"> Kupi kartu! </button>
+    <br/>
+    {{kupljena}}
+  </p>

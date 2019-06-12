@@ -38,18 +38,9 @@ namespace WebApp.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-
         [Required]
-        [Display(Name = "Date")]
-        public string Date { get; set; }
-
-        [Required]
-        [Display(Name = "FirstName")]
-        public string FirstName { get; set; }
-
-        [Required]
-        [Display(Name = "LastName")]
-        public string LastName { get; set; }
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -64,8 +55,33 @@ namespace WebApp.Models
 
 
         [Required]
-        [Display(Name = "TypeOfUser")]
-        public string TypeOfUser { get; set; }
+        [Display(Name = "FirstName")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "LastName")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Date")]
+        public string Date { get; set; }
+
+        [Required]
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "PhoneNumber")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "ImageUrl")]
+        public string ImageUrl { get; set; }
+
+
+        //[Required]
+        //[Display(Name = "TypeOfUser")]
+        //public string TypeOfUser { get; set; }
     }
 
     public class RegisterExternalBindingModel

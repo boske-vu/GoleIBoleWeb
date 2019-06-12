@@ -7,7 +7,7 @@ using WebApp.Models;
 
 namespace WebApp.Persistence.Repository
 {
-    public interface IPriceListRepository : IRepository<PriceList, int>
+    public interface IPriceListRepository : IRepository<Pricelist, int>
     {
 
     }

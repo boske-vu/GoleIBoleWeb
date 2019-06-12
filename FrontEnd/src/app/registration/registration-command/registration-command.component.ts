@@ -21,7 +21,12 @@ export class RegistrationCommandComponent implements OnInit {
     confirmPassword: ['', Validators.required],
     email: ['', Validators.required],
     date: ['', Validators.required],
-    typeOfUser: ['',Validators.required]
+    address: ['', Validators.required],
+    phoneNumber: ['', Validators.required],
+    imageUrl: ['']
+    
+    //typeOfUser: ['',Validators.required]
+   
   });
 
   constructor(private http: AuthHttpService, private fb:FormBuilder, private router: Router) { }

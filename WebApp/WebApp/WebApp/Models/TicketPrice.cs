@@ -14,7 +14,7 @@ namespace WebApp.Models
         public double Price { get; set; }
 
         public int PricelistId { get; set; }
-        public PriceList Pricelist { get; set; }
+        public Pricelist Pricelist { get; set; }
 
         public int TicketTypeId { get; set; }
         public TicketType TicketType { get; set; }

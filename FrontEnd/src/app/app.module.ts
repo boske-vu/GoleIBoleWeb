@@ -19,6 +19,8 @@ import { LinkoviComponent } from './linkovi/linkovi.component';
 import { BusLinesComponent } from './bus-lines/bus-lines.component';
 import { RedvoznjeComponent } from './redvoznje/redvoznje.component';
 import { CenovnikComponent } from './cenovnik/cenovnik.component';
+import {CenovnikHttpService} from './services/cenovnik.service';
+
 
 const routes : Routes = [
   {path:"home",component: HomeComponent},
@@ -42,7 +44,8 @@ const routes : Routes = [
     LinkoviComponent,
     BusLinesComponent,
     RedvoznjeComponent,
-    CenovnikComponent
+    CenovnikComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ const routes : Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [HttpService, {provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true}, AuthHttpService], //svi mogu da pristupe(injektuju servis)
+  providers: [HttpService, {provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},CenovnikHttpService, AuthHttpService], //svi mogu da pristupe(injektuju servis)
   bootstrap: [AppComponent]
 })
 export class AppModule { }

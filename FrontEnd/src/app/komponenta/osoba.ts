@@ -12,4 +12,8 @@ export class User{
     confirmpassword:string
     date:string
     typeOfUser:string
+    address:string
+    phoneNumber:string
+    imageurl:string
+    verificate: number
 }
