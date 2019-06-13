@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/komponenta/osoba';
+import { User } from 'src/app/classes/user';
 import {Validators} from '@angular/forms';
 import {AuthHttpService} from 'src/app/services/http/auth.service';
 import { NgForm} from '@angular/forms';
@@ -14,15 +14,15 @@ import {FormArray} from '@angular/forms';
 })
 export class RegistrationCommandComponent implements OnInit {
   registracijaForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['',Validators.required],
-    username: ['',Validators.required],
-    password: ['', Validators.required],
-    confirmPassword: ['', Validators.required],
-    email: ['', Validators.required],
-    date: ['', Validators.required],
-    address: ['', Validators.required],
-    phoneNumber: ['', Validators.required],
+    Name: ['', Validators.required],
+    Surname: ['',Validators.required],
+    Username: ['',Validators.required],
+    Password: ['', Validators.required],
+    ConfirmPassword: ['', Validators.required],
+    Email: ['', Validators.required],
+    Date: ['', Validators.required],
+    Address: ['', Validators.required],
+    PhoneNumber: ['', Validators.required],
     imageUrl: ['']
     
     //typeOfUser: ['',Validators.required]
@@ -36,7 +36,7 @@ export class RegistrationCommandComponent implements OnInit {
 
   register(){
     let regModel: User = this.registracijaForm.value;
-    this.http.registration(regModel);
+    this.http.register(regModel);
   }
 
 }

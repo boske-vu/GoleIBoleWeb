@@ -336,7 +336,7 @@ namespace WebApp.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, Password = model.Password, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword, TypeId = 1, VerificateAcc = 0, Address = model.Address, ImageUrl = model.ImageUrl, PhoneNumber = model.PhoneNumber/*Id=model.Email,PasswordHash = ApplicationUser.HashPassword(model.Password), UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword*//*TypeOfUser = model.TypeOfUser*/ /*Tip = "Student", TypeId = unitOfWork.userTypeRepository.GetIdFromString("Student")*/ };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, Password = model.Password, Name = model.Name, Surname = model.Surname, Date = model.Date, ConfirmPassword = model.ConfirmPassword, TypeId = 1, VerificateAcc = 0, Address = model.Address, ImageUrl = model.ImageUrl, PhoneNumber = model.PhoneNumber/*Id=model.Email,PasswordHash = ApplicationUser.HashPassword(model.Password), UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword*//*TypeOfUser = model.TypeOfUser*/ /*Tip = "Student", TypeId = unitOfWork.userTypeRepository.GetIdFromString("Student")*/ };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

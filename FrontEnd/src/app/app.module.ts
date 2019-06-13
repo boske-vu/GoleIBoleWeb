@@ -5,9 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
-import { KomponentaComponent } from './komponenta/komponenta.component';
-import { HttpService } from './services/http.service';
-import { importType } from '@angular/compiler/src/output/output_ast';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +17,10 @@ import { BusLinesComponent } from './bus-lines/bus-lines.component';
 import { RedvoznjeComponent } from './redvoznje/redvoznje.component';
 import { CenovnikComponent } from './cenovnik/cenovnik.component';
 import {CenovnikHttpService} from './services/cenovnik.service';
-import { UpdateUserComponent } from './update-user/update-user.component';
+import {CardVerificationHttpService} from './services/cardVerification.service';
+import { ProfilHttpService } from './services/profil.service';
+import { ProfilComponent } from './profil/profil.component';
+
 
 
 const routes : Routes = [
@@ -38,7 +38,6 @@ const routes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    KomponentaComponent,
     HomeComponent,
     LoginComponent,
     RegistrationCommandComponent,
@@ -46,7 +45,7 @@ const routes : Routes = [
     BusLinesComponent,
     RedvoznjeComponent,
     CenovnikComponent,
-    UpdateUserComponent,
+    ProfilComponent,
     
   ],
   imports: [
@@ -57,7 +56,7 @@ const routes : Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [HttpService, {provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},CenovnikHttpService, AuthHttpService], //svi mogu da pristupe(injektuju servis)
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CenovnikHttpService,ProfilHttpService,CardVerificationHttpService], //svi mogu da pristupe(injektuju servis)
   bootstrap: [AppComponent]
 })
 export class AppModule { }

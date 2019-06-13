@@ -9,6 +9,6 @@ namespace WebApp.Persistence.Repository
 {
     public interface IUserTypeRepository : IRepository<UserType, int>
     {
-        int GetIdFromString(string value);
+        
     }
 }

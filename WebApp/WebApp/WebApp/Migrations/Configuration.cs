@@ -12,7 +12,8 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(WebApp.Persistence.ApplicationDbContext context)
@@ -22,6 +23,7 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+            //  DayType
             if (!context.DayType.Any(d => d.Name == "Radni dan"))
             {
                 DayType dayType = new DayType() { Name = "Radni dan", Id = 1 };
@@ -118,20 +120,11 @@
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "Admin"))
+            if (!context.Roles.Any(r => r.Name == "Controller"))
             {
                 var store = new RoleStore<IdentityRole>(context);
                 var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "Admin" };
-
-                manager.Create(role);
-            }
-
-            if (!context.Roles.Any(r => r.Name == "Kontroler"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "Kontroler" };
+                var role = new IdentityRole { Name = "Controller" };
 
                 manager.Create(role);
             }
@@ -148,30 +141,23 @@
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
 
-            //if(!context.UserType.Any(t => t.Name == "Student"))
-            //{
-            //    var type = new UserType() { Name = "Student" };
-            //    context.UserType.Add(type);
-            //    context.SaveChanges();
-            //}
-
             if (!context.Users.Any(u => u.UserName == "admin@yahoo.com"))
             {
-                var user = new ApplicationUser() { Id = "admin", UserName = "admin@yahoo.com", Email = "admin@yahoo.com", PasswordHash = ApplicationUser.HashPassword("Admin123!"), TypeId = 2, FirstName = "Luka", LastName = "Bosanac"  /*TypeId = context.UserType.Where( t=> t.Name.Equals("Student")).FirstOrDefault().Id */};
+                var user = new ApplicationUser() { Id = "admin", UserName = "admin@yahoo.com", Email = "admin@yahoo.com", PasswordHash = ApplicationUser.HashPassword("Admin123!"), TypeId = 2 };
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Admin");
             }
 
-            if (!context.Users.Any(u => u.UserName == "kontroler@yahoo.com"))
+            if (!context.Users.Any(u => u.UserName == "controller@yahoo.com"))
             {
-                var user = new ApplicationUser() { Id = "kontroler", UserName = "kontroler@yahoo.com", Email = "kontroler@yahoo.com", PasswordHash = ApplicationUser.HashPassword("Kontroler123!"), TypeId = 2, FirstName = "Kontroler", LastName = "Kontroleric"  /*TypeId = context.UserType.Where( t=> t.Name.Equals("Student")).FirstOrDefault().Id */};
+                var user = new ApplicationUser() { Id = "controller", UserName = "controller@yahoo.com", Email = "controller@yahoo.comm", PasswordHash = ApplicationUser.HashPassword("Controller123!"), TypeId = 2 };
                 userManager.Create(user);
-                userManager.AddToRole(user.Id, "Admin");
+                userManager.AddToRole(user.Id, "Controller");
             }
 
             if (!context.Users.Any(u => u.UserName == "appu@yahoo.com"))
-            { 
-                var user = new ApplicationUser() { Id = "appu", UserName = "appu@yahoo.com", Email = "appu@yahoo.com", PasswordHash = ApplicationUser.HashPassword("Appu123!"), TypeId = 2, FirstName = "Goran", LastName = "Pavicevic" /*TypeId = context.UserType.Where(t => t.Name.Equals("Student")).FirstOrDefault().Id */};
+            {
+                var user = new ApplicationUser() { Id = "appu", UserName = "appu@yahoo.com", Email = "appu@yahoo.com", PasswordHash = ApplicationUser.HashPassword("Appu123!"), TypeId = 2 };
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "AppUser");
             }
@@ -207,17 +193,17 @@
             }
 
             //  line
-            if (!context.Line.Any(t => t.Id == 1))
+            if (!context.BusLine.Any(t => t.Id == 1))
             {
                 BusLine line = new BusLine() { Id = 1, SerialNumber = 1 };
-                context.Line.Add(line);
+                context.BusLine.Add(line);
                 context.SaveChanges();
             }
 
-            if (!context.Line.Any(t => t.Id == 2))
+            if (!context.BusLine.Any(t => t.Id == 2))
             {
                 BusLine line = new BusLine() { Id = 2, SerialNumber = 2 };
-                context.Line.Add(line);
+                context.BusLine.Add(line);
                 context.SaveChanges();
             }
 

@@ -252,6 +252,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CenovnikController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfilController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -260,9 +261,9 @@
     <Compile Include="Migrations\201905222056072_InitialMigration.Designer.cs">
       <DependentUpon>201905222056072_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906121234149_nova.cs" />
-    <Compile Include="Migrations\201906121234149_nova.Designer.cs">
-      <DependentUpon>201906121234149_nova.cs</DependentUpon>
+    <Compile Include="Migrations\201906122014007_novamigracija.cs" />
+    <Compile Include="Migrations\201906122014007_novamigracija.Designer.cs">
+      <DependentUpon>201906122014007_novamigracija.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -409,8 +410,8 @@
     <EmbeddedResource Include="Migrations\201905222056072_InitialMigration.resx">
       <DependentUpon>201905222056072_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906121234149_nova.resx">
-      <DependentUpon>201906121234149_nova.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906122014007_novamigracija.resx">
+      <DependentUpon>201906122014007_novamigracija.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

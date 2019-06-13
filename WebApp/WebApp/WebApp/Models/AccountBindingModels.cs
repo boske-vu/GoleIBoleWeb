@@ -55,12 +55,12 @@ namespace WebApp.Models
 
 
         [Required]
-        [Display(Name = "FirstName")]
-        public string FirstName { get; set; }
+        [Display(Name = "Name")]
+        public string Name { get; set; }
 
         [Required]
-        [Display(Name = "LastName")]
-        public string LastName { get; set; }
+        [Display(Name = "Surname")]
+        public string Surname { get; set; }
 
         [Required]
         [Display(Name = "Date")]

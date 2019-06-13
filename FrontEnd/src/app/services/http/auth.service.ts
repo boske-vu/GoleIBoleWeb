@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {User} from 'src/app/komponenta/osoba';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../../classes/user';
 
 @Injectable()
 export class AuthHttpService{
-
     base_url = "http://localhost:52295"
     constructor(private http: HttpClient){
-        
+
     }
 
     logIn(username: string, password: string) : Observable<any>{
@@ -60,30 +59,42 @@ export class AuthHttpService{
         });
     }
 
+    register(user: User) : Observable<any>{
 
-    registration(data: User){
-        return this.http.post<any>(this.base_url + "/api/Account/Register", data).subscribe();
-    }
-
-    GetCenaKarte(tip: string): Observable<any>{
-        return this.http.get<any>(this.base_url + "/api/PriceOfTickets/GetKarta/" + tip);
-    }
-
-    GetKupiKartu(tipKarte: string, tipKorisnika: string, user : string): Observable<any>{
-       
-        return this.http.get<any>(this.base_url + "/api/PriceOfTickets/GetKartaKupi2/" + tipKarte + "/" + tipKorisnika + "/" + user);
-    }
-
-    GetAllLines() : Observable<any>{
         return Observable.create((observer) => {
-            this.http.get<any>(this.base_url + "/api/Lines/GetLinije").subscribe(data =>{
-                observer.next(data);
+            let data = user;
+            let httpOptions={
+                headers:{
+                    "Content-type": "application/json"
+                }
+            }
+            this.http.post<any>(this.base_url + "/api/Account/Register",data,httpOptions).subscribe(data => {
+                observer.next("uspesno");
                 observer.complete();
-            }) 
+            },
+            err => {
+                console.log(err);
+                observer.next("neuspesno");
+                observer.complete();
+            });
         });
+     
     }
-    GetTipKorisnika(user : string): Observable<any>{
-       
-        return this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + user);
+
+    uploadImage(data: any, id: string) : Observable<any> {
+        return Observable.create((observer) => {
+            let httpOptions = {
+                headers: new HttpHeaders().delete('Content-Type')
+            }
+            this.http.post<any>(this.base_url + "/api/Profil/UplaodPicture/" + id,data,httpOptions).subscribe(data => {
+                observer.next("uspesno");
+                observer.complete();
+            },
+            err => {
+                console.log(err);
+                observer.next("neuspesno");
+                observer.complete();
+            });
+        });
     }
 }

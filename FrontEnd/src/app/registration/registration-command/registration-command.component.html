@@ -9,62 +9,62 @@
   <form [formGroup] = "registracijaForm" (ngSubmit)="register()">
     <label>
       First Name:
-      <input type="text" formControlName="firstName" required>
+      <input type="text" formControlName="Name" required>
     </label>
     <br>
 
     <label>
       Last Name:
-      <input type="text" formControlName="lastName">
+      <input type="text" formControlName="Surname">
     </label>
     <br>
 
     <label>
       User Name:
-      <input type="text" formControlName="username">
+      <input type="text" formControlName="Username">
     </label>
     <br>
 
     <label>
         &nbsp;  &nbsp; &nbsp; &nbsp;Email: &nbsp;
-      <input type="text" formControlName="email">
+      <input type="text" formControlName="Email">
     </label>
     <br>
 
     <label>
         Password:
-        <input type="password" formControlName="password">
+        <input type="password" formControlName="Password">
     </label>
     <br>
 
     <label>
           Confirm Password:
-        <input type="password" formControlName="confirmPassword">
+        <input type="password" formControlName="ConfirmPassword">
     </label>
     <br>
 
     <label>
         &nbsp;  &nbsp; &nbsp; &nbsp; Date:
-      <input type="date" formControlName="date">
+      <input type="date" formControlName="Date">
   </label>
   <br>
 
   <label>
      Address:
-  <input type="text" formControlName="address">
+  <input type="text" formControlName="Address">
 </label>
 <br>
 
 <label>
    PhoneNumber:
-<input type="number" formControlName="phoneNumber">
+<input type="number" formControlName="PhoneNumber">
 </label>
 <br>
 
 <div class="form-group col-md-6">
   <label for="image" class="col-sm-2">Dokument</label>
   <!-- <input type="file" class="form-control-file" formControlName="ImageUpload" id="FormControlFile1"> -->
-  <input #file type="file" accept='image/*' formControlName="imageUrl" (change)="preview(file.files)" />
+  <input #file type="file" accept='image/*' formControlName="ImageUrl" (change)="preview(file.files)" />
   <img [src]="imgURL" height="200" *ngIf="imgURL">
   <br>
   <!-- {{imgURL}}

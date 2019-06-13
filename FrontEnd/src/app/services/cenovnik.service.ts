@@ -1,8 +1,7 @@
-import { KupiKartu } from '../classes/kupiKartu';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { KupiKartu } from '../classes/kupiKartu';
 
 @Injectable()
 export class CenovnikHttpService{

@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Net.Mail;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApp.Models;
@@ -44,6 +43,7 @@ namespace WebApp.Controllers
             try
             {
                 var id = User.Identity.GetUserId();
+                
                 ApplicationUser user = userManager.FindById(id);
 
                 var typeId = user.TypeId;
@@ -53,7 +53,8 @@ namespace WebApp.Controllers
             }
             catch (Exception e)
             {
-                type = "neregistrovan";
+                type = "neregistrovan" + e.Message.ToString();
+
             }
 
             return Ok(type);
