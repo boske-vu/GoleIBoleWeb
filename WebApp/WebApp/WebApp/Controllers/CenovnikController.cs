@@ -43,7 +43,8 @@ namespace WebApp.Controllers
             try
             {
                 var id = User.Identity.GetUserId();
-                
+
+
                 ApplicationUser user = userManager.FindById(id);
 
                 var typeId = user.TypeId;

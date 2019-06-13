@@ -1,24 +1,26 @@
 <form id="rvform" name="rvform" action="redvoznje.php" method="get">
                        
     <table class="cenovnik-form" width="100%">
-    <tbody><tr>
-        <td width="210px">
-            <span class="lightblue-box-label"> Ред вожње важи од </span>
-        </td>
-        <td align="left">
-             <select class="selectbox" id="vaziod" onchange="lista_linija();" name="vaziod">
-                                                    <option value="2019-05-25"> 
-                    25.05.2019 
-                </option>
-                    
-          </select>
-        </td>
-    </tr>
-    
-   
+    <tbody>
+
+            <tr>
+                    <td width="210px">
+                        <span class="lightblue-box-label"> Red voznje </span>
+                    </td>
+                    <td align="left">
+                       
+                      <select [(ngModel)]="selectedTimetableType" name="selectedTimetableType">
+                        <option *ngFor="let TimetableType of redVoznjeInfo.TimetableTypes" [ngValue]="TimetableType">
+                          {{TimetableType.Name}}
+                        </option>
+                      </select>
+                       
+                    </td>
+                </tr>
+
     <tr>
         <td width="210px">
-            <span class="lightblue-box-label"> Ред вожње </span>
+            <span class="lightblue-box-label"> Red voznje: </span>
         </td>
         <td align="left">
            <br/>
@@ -29,8 +31,7 @@
           
         </td>
     </tr>
-    
-    
+
     <tr>
       
         <td align="left">
