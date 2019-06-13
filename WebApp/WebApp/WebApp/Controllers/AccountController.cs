@@ -6,7 +6,6 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -29,12 +28,11 @@ namespace WebApp.Controllers
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
         private ApplicationDbContext db = new ApplicationDbContext();
+        public IUnitOfWork Db { get; set; }
 
-        private readonly IUnitOfWork unitOfWork;
-
-        public AccountController(IUnitOfWork unitOfWork)
+        public AccountController(IUnitOfWork db)
         {
-            this.unitOfWork = unitOfWork;
+            this.Db = db;
         }
 
         public AccountController(ApplicationUserManager userManager,
@@ -132,7 +130,7 @@ namespace WebApp.Controllers
 
             IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
                 model.NewPassword);
-            
+
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -265,9 +263,9 @@ namespace WebApp.Controllers
             if (hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-                
-                 ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                    OAuthDefaults.AuthenticationType);
+
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
+                   OAuthDefaults.AuthenticationType);
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
@@ -325,7 +323,6 @@ namespace WebApp.Controllers
             return logins;
         }
 
-
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
@@ -336,7 +333,7 @@ namespace WebApp.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, Password = model.Password, Name = model.Name, Surname = model.Surname, Date = model.Date, ConfirmPassword = model.ConfirmPassword, TypeId = 1, VerificateAcc = 0, Address = model.Address, ImageUrl = model.ImageUrl, PhoneNumber = model.PhoneNumber/*Id=model.Email,PasswordHash = ApplicationUser.HashPassword(model.Password), UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Date = model.Date, ConfirmPassword = model.ConfirmPassword*//*TypeOfUser = model.TypeOfUser*/ /*Tip = "Student", TypeId = unitOfWork.userTypeRepository.GetIdFromString("Student")*/ };
+            var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email, TypeId = 1, Name = model.Name, Password = model.Password, Date = model.Date, ConfirmPassword = model.ConfirmPassword, Surname = model.Surname, VerificateAcc = 0, Address = model.Address, PhoneNumber = model.PhoneNumber };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -376,7 +373,7 @@ namespace WebApp.Controllers
             result = await UserManager.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
-                return GetErrorResult(result); 
+                return GetErrorResult(result);
             }
             return Ok();
         }

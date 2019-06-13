@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../classes/user';
+import { NgForm, FormBuilder, Validators } from '@angular/forms';
 import { AuthHttpService } from '../services/http/auth.service';
-import { NgForm ,FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-login',
