@@ -1,69 +1,69 @@
-<form id="rvform" name="rvform" action="redvoznje.php" method="get">
+<form id="rvform" name="rvform"  method="get"> <!--action="redvoznje.php"-->
                        
-    <table class="cenovnik-form" width="100%">
-    <tbody>
+  <table class="cenovnik-form" width="100%">
+  <tbody>
 
-            <tr>
-                    <td width="210px">
-                        <span class="lightblue-box-label"> Red voznje </span>
-                    </td>
-                    <td align="left">
-                       
-                      <select [(ngModel)]="selectedTimetableType" name="selectedTimetableType">
-                        <option *ngFor="let TimetableType of redVoznjeInfo.TimetableTypes" [ngValue]="TimetableType">
-                          {{TimetableType.Name}}
-                        </option>
-                      </select>
-                       
-                    </td>
-                </tr>
+          <tr>
+                  <td width="210px">
+                      <span class="lightblue-box-label"> Red voznje </span>
+                  </td>
+                  <td>
+                     
+                    <select [(ngModel)]="selectedTimetableType" name="selectedTimetableType">
+                      <option *ngFor="let TimetableType of redVoznjeInfo.TimetableTypes" [ngValue]="TimetableType">
+                        {{TimetableType.Name}}
+                      </option>
+                    </select>
+                     
+                  </td>
+              </tr>
 
-    <tr>
-        <td width="210px">
-            <span class="lightblue-box-label"> Red voznje: </span>
-        </td>
-        <td align="left">
-           <br/>
-            <select class="selectbox" id="rv" onchange="lista_linija();" name="rv">
-                <option value="rvg" selected="">Gradski</option>
-                <option value="rvp">Prigradski</option>
-            </select> 
-          
-        </td>
-    </tr>
-
-    <tr>
-      
-        <td align="left">
-            <span class="lightblue-box-label">
-              Дан
-            </span>
-        </td>
-        <td align="left">
-            <br/>
-            <select class="selectbox" id="dan" onchange="lista_linija();" name="dan">
-                <option value="R">Radni dan</option>
-                <option value="S" selected="">Subota</option>
-                <option value="N">Nedelja</option>
-            </select> 
-            
-        </td>
-    </tr>
-    
-    
-    <tr>
-        <td align="left">
+  <tr>
+      <td width="210px">
+          <span class="lightblue-box-label"> Red voznje: </span>
+      </td>
+      <td>
+         <br/>
+          <select class="selectbox" id="rv" onchange="lista_linija();" name="rv">
+              <option value="rvg" selected="">Gradski</option>
+              <option value="rvp">Prigradski</option>
+          </select> 
         
+      </td>
+  </tr>
+
+  <tr>
+    
+      <td>
           <span class="lightblue-box-label">
-            Линија
-              <br>
-                (Изаберите једну или више линија) 
-             </span>
-        
-        </td>
-        <td align="left" valign="top">  
-            <br/>  
-                <div id="lista_linija">		
+            Дан
+          </span>
+      </td>
+      <td>
+          <br/>
+          <select class="selectbox" id="dan" onchange="lista_linija();" name="dan">
+              <option value="R">Radni dan</option>
+              <option value="S" selected="">Subota</option>
+              <option value="N">Nedelja</option>
+          </select> 
+          
+      </td>
+  </tr>
+  
+  
+  <tr>
+      <td>
+      
+        <span class="lightblue-box-label">
+          Линија
+            <br>
+              (Изаберите једну или више линија) 
+           </span>
+      
+      </td>
+      <td valign="top">  
+          <br/>  
+              <div id="lista_linija">		
 
 
 
@@ -76,7 +76,7 @@
 
 
 
-    <select id="linija" class="listbox" size="5" name="linija[]" multiple="">
+  <select id="linija" class="listbox" size="5" name="linija[]" multiple="">
 <option value="1*">1 KLISA-CENTAR-LIMAN I</option>
 <option value="2.">2 CENTAR - NOVO NASELJE</option>
 <option value="3.">3 PETROVARADIN-CENTAR-DETELINARA</option>
@@ -99,19 +99,19 @@
 <option value="18B">18B N.NASELJE-LIMAN-CENTAR-DETELINARA-N.NASELJE</option>
 <option value="20">20 ZEL.STANICA - LESNINA</option>
 </select></div>                               
-        </td>
-     </tr>
-     <tr>    
-         
-        <td></td>
-        <td>
-        
-        <div align="right">
-          <button type="button" id="blue-button" onclick="ispis_polazaka()">ПРИКАЖИ</button>
-        </div>
-        </td>
-    </tr>
-    
+      </td>
+   </tr>
+   <tr>    
+       
+      <td></td>
+      <td>
+      
+      <div>
+        <button type="button" id="blue-button" onclick="ispis_polazaka()">ПРИКАЖИ</button>
+      </div>
+      </td>
+  </tr>
+  
 </tbody></table>
 
 

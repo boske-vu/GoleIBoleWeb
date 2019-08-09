@@ -19,6 +19,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ProfilHttpService } from './services/profil.service';
 import { CardVerificationComponent } from './card-verification/card-verification.component';
 import { CardVerificationHttpService } from './services/cardVerification.service';
+import { RedVoznjeHttpService } from './services/redvoznje.service';
 /*import { LineEditComponent } from './line-edit/line-edit.component';
 import { StationEditComponent } from './station-edit/station-edit.component';
 import { TimetableEditComponent } from './timetable-edit/timetable-edit.component';
@@ -70,7 +71,7 @@ const routes : Routes = [
     ReactiveFormsModule,
     UiModule 
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService], //svi mogu da pristupe(injektuju servis)
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService,RedVoznjeHttpService], //svi mogu da pristupe(injektuju servis)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
