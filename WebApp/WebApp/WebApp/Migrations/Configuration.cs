@@ -175,6 +175,16 @@
                 Pricelist pricelist = new Pricelist() { Id = 2, From = DateTime.Now.ToString(), To = DateTime.Now.ToString() };
                 context.Pricelist.Add(pricelist);
                 context.SaveChanges();
+            } if (!context.Pricelist.Any(t => t.Id == 3))
+            {
+                Pricelist pricelist = new Pricelist() { Id = 3, From = DateTime.Now.ToString(), To = DateTime.Now.ToString() };
+                context.Pricelist.Add(pricelist);
+                context.SaveChanges();
+            } if (!context.Pricelist.Any(t => t.Id == 4))
+            {
+                Pricelist pricelist = new Pricelist() { Id = 4, From = DateTime.Now.ToString(), To = DateTime.Now.ToString() };
+                context.Pricelist.Add(pricelist);
+                context.SaveChanges();
             }
 
             // Stations
@@ -231,6 +241,25 @@
                 context.TicketPrice.Add(ticketPrice);
                 context.SaveChanges();
             }
+             if (!context.TicketPrice.Any(t => t.Id == 2))
+            {
+                TicketPrice ticketPrice = new TicketPrice() { Price = 250, PricelistId = 2, TicketTypeId = 2 };
+                context.TicketPrice.Add(ticketPrice);
+                context.SaveChanges();
+            }
+             if (!context.TicketPrice.Any(t => t.Id == 3))
+            {
+                TicketPrice ticketPrice = new TicketPrice() { Price = 1500, PricelistId = 3, TicketTypeId = 3 };
+                context.TicketPrice.Add(ticketPrice);
+                context.SaveChanges();
+            }
+             if (!context.TicketPrice.Any(t => t.Id == 4))
+            {
+                TicketPrice ticketPrice = new TicketPrice() { Price = 4500, PricelistId = 4, TicketTypeId = 4 };
+                context.TicketPrice.Add(ticketPrice);
+                context.SaveChanges();
+            }
+
         }
     }
 }

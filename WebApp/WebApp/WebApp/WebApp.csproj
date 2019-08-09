@@ -265,6 +265,10 @@
     <Compile Include="Migrations\201906122014007_novamigracija.Designer.cs">
       <DependentUpon>201906122014007_novamigracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908091747188_nm11.cs" />
+    <Compile Include="Migrations\201908091747188_nm11.Designer.cs">
+      <DependentUpon>201908091747188_nm11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -412,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906122014007_novamigracija.resx">
       <DependentUpon>201906122014007_novamigracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091747188_nm11.resx">
+      <DependentUpon>201908091747188_nm11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
