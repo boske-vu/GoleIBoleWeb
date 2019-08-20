@@ -87,6 +87,12 @@ namespace WebApp.Controllers
         [Route("api/Cenovnik/KupiKartu")]
         public IHttpActionResult KupiKartu(KupiKartuBindingModel karta)
         {
+            if (karta.Price == 0)
+            {
+                int s = Db.ticketTypeRepository.Find(x => x.Name.Equals(karta.TipKarte)).FirstOrDefault().Id;
+                double ret = Db.ticketPriceRepository.Find(x => x.TicketTypeId.Equals(s)).FirstOrDefault().Price;
+                karta.Price = ret;
+            }
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

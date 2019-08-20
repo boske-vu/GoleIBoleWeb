@@ -609,3 +609,4 @@ C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\Web
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.nm11.resources
+C:\Users\Goran\Desktop\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.nm11.resources
