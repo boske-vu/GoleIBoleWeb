@@ -34,7 +34,7 @@ namespace WebApp.Controllers
 
         // GET: api/Profil/User
         [AllowAnonymous]
-        [ResponseType(typeof(ApplicationUser))]
+        [ResponseType(typeof (List<ApplicationUser>))]
         [Route("api/Profil/User")]
         public IHttpActionResult GetUser()
         {

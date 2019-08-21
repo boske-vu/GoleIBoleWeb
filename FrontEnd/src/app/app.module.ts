@@ -26,12 +26,12 @@ import { TimetableEditComponent } from './timetable-edit/timetable-edit.componen
 import { LineEditHttpService } from 'src/services/lineEdit.service';
 import { TimetableEditHttpService } from 'src/services/timetableEdit.service';
 import { StationEditHttpService } from 'src/services/stationEdit.service';
-import { VerificateUserComponent } from './verificate-user/verificate-user.component';
-import { VerificateUserHttpService } from '../services/verificateUser.service';
 */
 import { from } from 'rxjs';
 import { AuthGuardAdmin } from './services/http/auth.guard';
 import { AuthGuardController } from './services/http/auth2.guard';
+import { VerificateUserComponent } from './verificate-user/verificate-user.component';
+import { VerificateUserHttpService } from './services/verificateUser.service';
 
 
 const routes : Routes = [
@@ -42,6 +42,7 @@ const routes : Routes = [
   {path : "cenovnik", component: CenovnikComponent},
   {path : "profil", component: ProfilComponent},
   {path: "cardVerification", component: CardVerificationComponent},
+  {path: "verificateUser", component: VerificateUserComponent},
   {path : "", component: HomeComponent, pathMatch:"full"},
   {path : "**", redirectTo: ""},
 ]
@@ -57,10 +58,10 @@ const routes : Routes = [
     CardVerificationComponent,
     CenovnikComponent,
     ProfilComponent,
+    VerificateUserComponent,
     //LineEditComponent,
     ///StationEditComponent,
    // TimetableEditComponent,
-    //VerificateUserComponent
     
   ],
   imports: [
@@ -71,7 +72,7 @@ const routes : Routes = [
     ReactiveFormsModule,
     UiModule 
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService,RedVoznjeHttpService], //svi mogu da pristupe(injektuju servis)
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService,RedVoznjeHttpService, VerificateUserHttpService], //svi mogu da pristupe(injektuju servis)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
