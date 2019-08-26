@@ -253,7 +253,10 @@
     <Compile Include="Controllers\CardVerificationController.cs" />
     <Compile Include="Controllers\CenovnikController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LineController.cs" />
+    <Compile Include="Controllers\PriceListEditController.cs" />
     <Compile Include="Controllers\ProfilController.cs" />
+    <Compile Include="Controllers\StationEditController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\VerificateUserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -271,9 +274,15 @@
     <Compile Include="Migrations\201908091747188_nm11.Designer.cs">
       <DependentUpon>201908091747188_nm11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908211541174_novamig.cs" />
+    <Compile Include="Migrations\201908211541174_novamig.Designer.cs">
+      <DependentUpon>201908211541174_novamig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddLine.cs" />
+    <Compile Include="Models\AddStation.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\BusLine.cs" />
     <Compile Include="Models\DayType.cs" />
@@ -421,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908091747188_nm11.resx">
       <DependentUpon>201908091747188_nm11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908211541174_novamig.resx">
+      <DependentUpon>201908211541174_novamig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

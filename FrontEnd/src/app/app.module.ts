@@ -20,7 +20,7 @@ import { ProfilHttpService } from './services/profil.service';
 import { CardVerificationComponent } from './card-verification/card-verification.component';
 import { CardVerificationHttpService } from './services/cardVerification.service';
 import { RedVoznjeHttpService } from './services/redvoznje.service';
-/*import { LineEditComponent } from './line-edit/line-edit.component';
+/*
 import { StationEditComponent } from './station-edit/station-edit.component';
 import { TimetableEditComponent } from './timetable-edit/timetable-edit.component';
 import { LineEditHttpService } from 'src/services/lineEdit.service';
@@ -32,6 +32,14 @@ import { AuthGuardAdmin } from './services/http/auth.guard';
 import { AuthGuardController } from './services/http/auth2.guard';
 import { VerificateUserComponent } from './verificate-user/verificate-user.component';
 import { VerificateUserHttpService } from './services/verificateUser.service';
+import { LineComponent } from './line/line.component';
+import { LineHttpService } from './services/line.service';
+import { Line } from './classes/line';
+import { StationEditComponent } from './station-edit/station-edit.component';
+import { StationEditHttpService } from './services/stationEdit.service';
+import { PaypalComponent } from './paypal/paypal.component';
+import { PriceListEditComponent } from './price-list-edit/price-list-edit.component';
+import { PriceListEditHttpService } from './services/priceListEdit.service';
 
 
 const routes : Routes = [
@@ -43,10 +51,12 @@ const routes : Routes = [
   {path : "profil", component: ProfilComponent},
   {path: "cardVerification", component: CardVerificationComponent},
   {path: "verificateUser", component: VerificateUserComponent},
+  {path: "line", component: LineComponent},
+  {path: "stationEdit", component: StationEditComponent},
+  {path: "priceListEdit", component: PriceListEditComponent},
   {path : "", component: HomeComponent, pathMatch:"full"},
   {path : "**", redirectTo: ""},
 ]
-
 
 @NgModule({
   declarations: [
@@ -59,7 +69,10 @@ const routes : Routes = [
     CenovnikComponent,
     ProfilComponent,
     VerificateUserComponent,
-    //LineEditComponent,
+    LineComponent,
+    StationEditComponent,
+    PaypalComponent,
+    PriceListEditComponent,
     ///StationEditComponent,
    // TimetableEditComponent,
     
@@ -72,7 +85,7 @@ const routes : Routes = [
     ReactiveFormsModule,
     UiModule 
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService,RedVoznjeHttpService, VerificateUserHttpService], //svi mogu da pristupe(injektuju servis)
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService,RedVoznjeHttpService, VerificateUserHttpService, LineHttpService, StationEditHttpService, PriceListEditHttpService], //svi mogu da pristupe(injektuju servis)
   bootstrap: [AppComponent]
 })
 export class AppModule { }

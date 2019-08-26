@@ -23,7 +23,7 @@ export class CardVerificationComponent implements OnInit {
   checkId()
   {
     this.card = this.verificationForm.value
-    console.log("penal: " + this.card.Id);
+    
       this.http.getStatus(this.card.Id).subscribe(temp => {
       if(temp == "true"){
         this.message = "Aktivan"

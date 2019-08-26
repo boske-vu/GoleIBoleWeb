@@ -1,7 +1,10 @@
-<nav class="navbar navbar-dark bg-primary mb-lg-5 ">
+<nav class="navbar navbar-dark bg-dark mb-lg-8 ">
   <a class="navbar-brand" href="/">JGSP - NOVI SAD</a>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav col-xs-6">
+        <!-- <a class="navbar-brand" href="#">
+            <img src="C:\Users\boske\OneDrive\Desktop\slika\logo.png" alt="." style="width:40px;">
+          </a> -->
       <a
         *ngIf="!jwtIsAdmin() && !jwtIsController()"
         class="nav-item nav-link"
@@ -35,7 +38,7 @@
       <a
         *ngIf="jwtIsAdmin()"
         class="nav-item nav-link"
-        href="http://localhost:4200/lineEdit"
+        href="http://localhost:4200/line"
         >UREDI LINIJE</a
       >
       <a
@@ -53,7 +56,7 @@
       <a
         *ngIf="jwtIsAdmin()"
         class="nav-item nav-link"
-        href="http://localhost:4200/"
+        href="http://localhost:4200/priceListEdit"
         >UREDI CENOVNIK</a
       >
       <a
@@ -76,7 +79,7 @@
       >
       <a
         *ngIf="jwtIsUndefined()"
-        class="nav-item nav-link"
+        class="nav-item nav-active"
         (click)="logout()"
         href="http://localhost:4200/login"
         >ODJAVI SE</a

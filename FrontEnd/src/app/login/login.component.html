@@ -1,9 +1,16 @@
-<form [formGroup]="loginForm" (submit)="login()">
-  <p>UserName:<span class="fa fa-user"></span><input Placeholder="UserName" type="text" formControlName="UserName" required></p>
-  <p>Password:<span class="fa fa-lock"></span><input Placeholder="Password" type="password" formControlName="Password" required></p> 
-  <div>
-    <span style="width:50%; text-align:center;  display: inline-block;"><input type="submit" value="Login"></span>
-  </div>
-</form>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
+<br><br><br>
+  <form [formGroup]="loginForm" (submit)="login()" class="col-md-2 col-md-offset-20" >
+    <div class="row justify-content-center">
+    <p>UserName:<span class="fa fa-user"></span><input Placeholder="UserName" type="text" formControlName="UserName" required></p>
+    <p>Password:<span class="fa fa-lock"></span><input Placeholder="Password" type="password" formControlName="Password" required></p> 
+      <div>
+        <span style="width:50%; text-align:center;  display: inline-block;"><input type="submit" value="Login"></span>
+      </div>
+      
+    </div>
+  </form>
 
-<a routerLink="/register">Register here</a>
+  <br>
+  <a routerLink="/register">Register here</a>
+
