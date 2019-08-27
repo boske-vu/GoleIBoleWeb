@@ -59,6 +59,10 @@ namespace WebApp.Controllers
                     ret = ttt.Times;
                     break;
                 }
+                else
+                {
+                    ret = "Trenutno nema polazaka za odabranu liniju";
+                }
             }
 
             if (ret != null)

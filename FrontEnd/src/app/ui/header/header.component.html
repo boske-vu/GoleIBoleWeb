@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark mb-lg-8 ">
+<nav class="navbar navbar-dark bg-dark mb-lg-12 ">
   <a class="navbar-brand" href="/">JGSP - NOVI SAD</a>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav col-xs-6">
@@ -29,12 +29,12 @@
         href="http://localhost:4200/cenovnik"
         >CENOVNIK</a
       >
-      <a
+      <!-- <a
         *ngIf="!jwtIsUndefined()"
         class="nav-item nav-link"
         href="http://localhost:4200/login"
         >PRIJAVI SE/REGISTRUJ SE</a
-      >
+      > -->
       <a
         *ngIf="jwtIsAdmin()"
         class="nav-item nav-link"
@@ -84,6 +84,14 @@
         href="http://localhost:4200/login"
         >ODJAVI SE</a
       >
+      
     </div>
+    
   </div>
+  <ul class="nav navbar-nav navbar-right">
+
+      <li><a href="http://localhost:4200/register"><span class="glyphicon glyphicon-user"></span>Registruj se!</a></li>
+        <br/>  
+      <li><a href="http://localhost:4200/login"><span class="glyphicon glyphicon-log-in"></span>Prijavi se!</a></li>
+  </ul>
 </nav>

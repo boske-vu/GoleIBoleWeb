@@ -4,7 +4,11 @@
   <div class="row">
     <div class="col-sm-2">Red voznje:</div>
     <div class="col-sm-4">
-      <select class="listbox" id="rv" [(ngModel)]="selectedTeritorija">
+      <select
+        class="listbox uk-dropdown-grid"
+        id="rv"
+        [(ngModel)]="selectedTeritorija"
+      >
         <option value="1" selected="">Gradski</option>
         <option value="2">Prigradski</option>
       </select>
