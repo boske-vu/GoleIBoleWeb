@@ -216,6 +216,24 @@
                 context.BusLine.Add(line);
                 context.SaveChanges();
             }
+            if (!context.BusLine.Any(t => t.Id == 3))
+            {
+                BusLine line = new BusLine() { Id = 3, SerialNumber = 3 };
+                context.BusLine.Add(line);
+                context.SaveChanges();
+            }
+            if (!context.BusLine.Any(t => t.Id == 4))
+            {
+                BusLine line = new BusLine() { Id = 4, SerialNumber = 4 };
+                context.BusLine.Add(line);
+                context.SaveChanges();
+            }
+            if (!context.BusLine.Any(t => t.Id == 5))
+            {
+                BusLine line = new BusLine() { Id = 5, SerialNumber = 5 };
+                context.BusLine.Add(line);
+                context.SaveChanges();
+            }
 
             // Timetable
 
@@ -228,7 +246,13 @@
 
             if (!context.Timetable.Any(t => t.Id == 2))
             {
-                Timetable timetable = new Timetable() { Id = 2, BusLineId = 1, TimetableTypeId = 2, DayTypeId = 2, Times = "9:50 10:50 11:50 12:50 13:50" };
+                Timetable timetable = new Timetable() { Id = 2, BusLineId = 2, TimetableTypeId = 2, DayTypeId = 2, Times = "9:30 10:30 11:30 12:30 13:30" };
+                context.Timetable.Add(timetable);
+                context.SaveChanges();
+            }
+            if (!context.Timetable.Any(t => t.Id == 3))
+            {
+                Timetable timetable = new Timetable() { Id = 3, BusLineId = 1, TimetableTypeId = 1, DayTypeId = 2, Times = "9:10 10:10 11:10 12:10 13:10" };
                 context.Timetable.Add(timetable);
                 context.SaveChanges();
             }
