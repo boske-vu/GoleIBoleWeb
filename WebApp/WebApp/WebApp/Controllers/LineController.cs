@@ -238,6 +238,26 @@ namespace WebApp.Controllers
             }
         }
 
+
+        // POST: api/LineEdit/Spoji/{linija}/{stanica}
+        [ResponseType(typeof(string))]
+        [Route("api/LineEdit/Spoji/{linija}/{stanica}")]
+        [Authorize(Roles = "Admin")]
+        public IHttpActionResult Spoji(string linija, string stanica)
+        {
+            BusLine lin = Db.busLineRepository.GetAll().Where(x => x.SerialNumber.ToString() == linija).FirstOrDefault();
+            Station sta = Db.stationRepository.GetAll().Where(x => x.Name == stanica).FirstOrDefault();
+            lin.Stations = new List<Station>();
+            lin.Stations.Add(sta);
+            sta.Lines = new List<BusLine>();
+            sta.Lines.Add(lin);
+            Db.stationRepository.Update(sta);
+            Db.busLineRepository.Update(lin);
+            Db.Complete();
+            return Ok("");
+            
+        }
+
         // GET: api/LineEdit/GetAllStations
         [Authorize(Roles = "Admin")]
         [ResponseType(typeof(List<string>))]

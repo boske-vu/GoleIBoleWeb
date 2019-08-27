@@ -104,4 +104,14 @@ export class StationEditHttpService{
             });
         });     
     }
+
+    // addLines() : Observable<any>{
+    //     return Observable.create((observer) => {   
+    //         let data = line; 
+    //         this.http.post<any>(this.base_url + "/api/StationEdit/AddStationToLine", data).subscribe(data =>{
+    //             observer.next(data);
+    //             observer.complete();     
+    //         })             
+    //     });
+    // }
 }

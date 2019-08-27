@@ -38,6 +38,7 @@ export class LineComponent implements OnInit {
   temp: boolean = true
   serNum: number
   newLine: AddLine = new AddLine()
+  
 
   ngOnInit() {
     this.http.getAll().subscribe((line) => {
@@ -91,21 +92,11 @@ export class LineComponent implements OnInit {
 
   addStation()
   {
-    this.StationsAdd.forEach(element => {
-      if(element == this.stationAddSelected){
-        this.temp = false;
-      }
-    });
     
-    if(this.temp == true)
-    {
-      this.StationsAdd.push(this.stationAddSelected);
-      this.stationAddSelected = null;
-    }
-    else
-    {
-      this.temp = true;
-    }
+     this.http.GetSpoji(this.selectedLine, this.stationAddSelected).subscribe((data) => 
+     {
+      err => console.log(err);
+     });
   }
 
   AddLine(){
@@ -135,5 +126,7 @@ export class LineComponent implements OnInit {
       err => console.log(err);
     });
   }
+
+  
 
 }
