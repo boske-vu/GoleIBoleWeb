@@ -20,6 +20,7 @@ import { ProfilHttpService } from './services/profil.service';
 import { CardVerificationComponent } from './card-verification/card-verification.component';
 import { CardVerificationHttpService } from './services/cardVerification.service';
 import { RedVoznjeHttpService } from './services/redvoznje.service';
+import { AgmCoreModule } from '@agm/core';
 /*
 import { StationEditComponent } from './station-edit/station-edit.component';
 import { TimetableEditComponent } from './timetable-edit/timetable-edit.component';
@@ -40,6 +41,8 @@ import { StationEditHttpService } from './services/stationEdit.service';
 import { PaypalComponent } from './paypal/paypal.component';
 import { PriceListEditComponent } from './price-list-edit/price-list-edit.component';
 import { PriceListEditHttpService } from './services/priceListEdit.service';
+import { MapComponent } from './map/map.component';
+import {MapHttpService} from './services/map.service';
 
 
 const routes : Routes = [
@@ -54,6 +57,7 @@ const routes : Routes = [
   {path: "line", component: LineComponent},
   {path: "stationEdit", component: StationEditComponent},
   {path: "priceListEdit", component: PriceListEditComponent},
+  {path: "map", component: MapComponent},
   {path : "", component: HomeComponent, pathMatch:"full"},
   {path : "**", redirectTo: ""},
 ]
@@ -73,6 +77,7 @@ const routes : Routes = [
     StationEditComponent,
     PaypalComponent,
     PriceListEditComponent,
+    MapComponent
     ///StationEditComponent,
    // TimetableEditComponent,
     
@@ -83,9 +88,10 @@ const routes : Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),  
     ReactiveFormsModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyDnihJyw_34z5S1KZXp90pfTGAqhFszNJk'}),
     UiModule 
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService,RedVoznjeHttpService, VerificateUserHttpService, LineHttpService, StationEditHttpService, PriceListEditHttpService], //svi mogu da pristupe(injektuju servis)
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true},AuthHttpService,CardVerificationHttpService, CenovnikHttpService,ProfilHttpService,RedVoznjeHttpService, VerificateUserHttpService, LineHttpService, StationEditHttpService, PriceListEditHttpService, MapHttpService], //svi mogu da pristupe(injektuju servis)
   bootstrap: [AppComponent]
 })
 export class AppModule { }

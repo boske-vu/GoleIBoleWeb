@@ -14,7 +14,7 @@ namespace WebApp.Models
         public int SerialNumber { get; set; }
 
         public List<Vehicle> Vehicles { get; set; }
-        public List<Station> Stations { get; set; }
+        public virtual ICollection<Station> Stations { get; set; }
         public List<Timetable> Timetables { get; set; }
     }
 }

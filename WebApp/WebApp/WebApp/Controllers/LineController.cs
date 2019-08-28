@@ -40,7 +40,7 @@ namespace WebApp.Controllers
 
 
         // GET: api/LineEdit/Lines
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         [ResponseType(typeof(List<int>))]
         [Route("api/LineEdit/Lines")]
         public IHttpActionResult GetLines()
@@ -281,6 +281,40 @@ namespace WebApp.Controllers
 
         }
 
+        [AllowAnonymous]
+        [ResponseType(typeof(string))]
+        [Route("api/LineEdit/GetStanica/{linijaBroj}")]
+        public IHttpActionResult GetStanica(string linijaBroj)
+        {
+            int idLinije;
+            List<BusLine> sveLinije = Db.busLineRepository.GetAll().ToList();
+            BusLine izabranaLinija = new BusLine();
+
+            foreach(var l in sveLinije)
+            {
+                if(l.SerialNumber.ToString() == linijaBroj)
+                {
+                    izabranaLinija = l;
+                    break;
+                }
+            }
+
+            if(izabranaLinija == null)
+            {
+                return NotFound();
+            }
+
+            List<Koordinate> listaKoordinata = new List<Koordinate>();
+            foreach (var stanica in izabranaLinija.Stations)
+            {
+                Koordinate k = new Koordinate() { x = stanica.X, y = stanica.Y, name = stanica.Name };
+                listaKoordinata.Add(k);
+            }
+
+            return Ok(listaKoordinata);
+        }
+        
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -289,5 +323,14 @@ namespace WebApp.Controllers
             }
             base.Dispose(disposing);
         }
+
+      
+    }
+
+    class Koordinate
+    {
+        public double x { get; set; }
+        public double y { get; set; }
+        public string name { get; set; }
     }
 }

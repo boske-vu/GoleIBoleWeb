@@ -14,6 +14,6 @@ namespace WebApp.Models
         public double X { get; set; }
         public double Y { get; set; }
 
-        public List<BusLine> Lines { get; set; }
+        public virtual ICollection<BusLine> Lines { get; set; }
     }
 }

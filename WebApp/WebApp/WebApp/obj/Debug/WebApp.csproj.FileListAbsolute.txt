@@ -612,3 +612,4 @@ C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\Web
 C:\Users\Goran\Desktop\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.nm11.resources
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.novamig.resources
 C:\Users\Goran\Desktop\GoleIBoleWeb\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.novamig.resources
+C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.baza.resources
