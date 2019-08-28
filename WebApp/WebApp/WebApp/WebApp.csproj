@@ -279,6 +279,10 @@
     <Compile Include="Migrations\201908211541174_novamig.Designer.cs">
       <DependentUpon>201908211541174_novamig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908281946205_baza.cs" />
+    <Compile Include="Migrations\201908281946205_baza.Designer.cs">
+      <DependentUpon>201908281946205_baza.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -434,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908211541174_novamig.resx">
       <DependentUpon>201908211541174_novamig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908281946205_baza.resx">
+      <DependentUpon>201908281946205_baza.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
