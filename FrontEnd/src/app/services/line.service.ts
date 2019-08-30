@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AddLine } from '../classes/addline';
 import { AddStation } from '../classes/addStation';
+import { LinijaZaHub } from 'src/app/classes/user';
 
 @Injectable()
 export class LineHttpService{
@@ -63,6 +64,10 @@ export class LineHttpService{
         });
     }
 
+    GetLinije() : Observable<any> {
+        return this.http.get<any>(this.base_url + "/api/LineEdit/Linijas");
+      }
+
     addLine(line: AddLine) : Observable<any>{
 
         return Observable.create((observer) => {
@@ -113,5 +118,7 @@ export class LineHttpService{
         });
      
     }
+
+   
 
 }

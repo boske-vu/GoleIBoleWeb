@@ -58,8 +58,21 @@ namespace WebApp.Controllers
             return Ok(ret);
         }
 
+        [AllowAnonymous]
+        [Route("api/LineEdit/Linijas")]
+        public List<string> GetLinije()
+        {
+            IQueryable<BusLine> linije = Db.busLineRepository.GetAll().AsQueryable();
+            List<string> BrojeviLinija = new List<string>();
+            foreach (BusLine l in linije)
+            {
+                BrojeviLinija.Add(l.SerialNumber.ToString());
+            }
+            return BrojeviLinija;
+        }
+
         // GET: api/LineEdit/SelectedLine
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         [ResponseType(typeof(BusLine))]
         [Route("api/LineEdit/SelectedLine/{serial}")]
         public IHttpActionResult GetSelectedLine(string serial)
