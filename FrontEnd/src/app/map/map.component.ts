@@ -54,12 +54,12 @@ export class MapComponent implements OnInit {
   }
 
   placeMarker($event){
-    this.polyline.addLocation(new GeoLocation($event.coords.lat, $event.coords.lng))
+    this.polyline.addLocation(new GeoLocation($event.coords.lat, $event.coords.lng),false)
     //console.log(this.polyline)
   }
 
   placeMarkerLinije(x, y){
-    this.polylineMoje.addLocation(new GeoLocation(x, y))
+    this.polylineMoje.addLocation(new GeoLocation(x, y),false)
     
     console.log(this.polylineMoje)
   }

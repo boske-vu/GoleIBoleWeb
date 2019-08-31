@@ -26,7 +26,7 @@
         <br>
        <div align="center">
         <!-- <button (click)="JsonParsiranje()" >Json</button> -->
-      <agm-map [latitude]="45.242268" [longitude]="19.842954" [zoom]="15">
+      <agm-map [latitude]="45.242268" [longitude]="19.842954" [zoom]="10">
 
         <agm-marker *ngFor="let marker of markeri" [latitude]="marker.location.latitude"
           [longitude]="marker.location.longitude" [iconUrl]="marker.icon" [title]="marker.title" [label]="marker.label">
