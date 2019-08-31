@@ -86,7 +86,7 @@ export class BusLocationComponent implements OnInit {
         //var y = parseFloat(this.busKordinate[0].replace(',', '.'));
 
         this.autobusMarker = new MarkerInfo(new GeoLocation(kord2, kord1), "assets/lasta.jpg", "", "", "");
-        this.polylineMoje.addLocation(new GeoLocation(+kord2, +kord1));
+        this.polylineMoje.addLocation(new GeoLocation(+kord2, +kord1), true);
         this.markeri.push(this.autobusMarker);
       }
     }
