@@ -1,45 +1,31 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!-- Include the above in your HEAD tag -->
-
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-<div class="main">
-  <div class="container">
-    <div class="middle">
-      <div id="login">
-
-        <p class="paragraf_text">Linija:<br>
-          <select id="ButtonsHomePage" [(ngModel)]="selectedLine" (change)="onSelectionChangeNumber($event)">
+<br>
+<h3 align="center" class="paragraf_text">
+    Pratite kretanje autobusa
+</h3>
+<br><br>
+  <div class="row">
+    <div class="col-sm-2">Linija:</div>
+    <div class="col-sm-5">
+        <select [(ngModel)]="selectedLine" (change)="onSelectionChangeNumber($event)" class="form-control">
             <option value="">-- Izaberi liniju --</option>
             <option *ngFor="let lin of linijeZaView" [value]="lin">
               <a title="{{text}}">{{lin}}</a>
             </option>
           </select>
-          <br>
-        </p><br>
-        <br>
+    </div>
 
-        <p><span class="fa "></span><button id="ButtonsHomePage" (click)="OnGetPolasci()">Prati</button></p>
-        <p><span class="fa "></span><button id="ButtonsHomePage" (click)="Stop()">Prekini</button></p>
+        <div class="col-sm-2">
+            <button class="btn btn-primary" (click)="OnGetPolasci()">Prati</button>
+        
+        </div>
+        <div>
+            <button class="btn btn-outline-danger" (click)="Stop()">Prekini</button>
+        
+        </div>
+      </div>
         <br>
-        <p class="paragraf_text">
-          Pratite kretanje autobusa
-        </p>
+       <div align="center">
         <!-- <button (click)="JsonParsiranje()" >Json</button> -->
-        <div class="clearfix"></div>
-      </div>
-      <div class="clearfix"></div>
-      <div class="logo"> JGSP
-        <div class="clearfix"></div>
-      </div>
       <agm-map [latitude]="45.242268" [longitude]="19.842954" [zoom]="15">
 
         <agm-marker *ngFor="let marker of markeri" [latitude]="marker.location.latitude"
@@ -54,9 +40,5 @@
           [iconUrl]="polylineMoje.icon"></agm-marker>
       </agm-map>
     </div>
-    <p><span class="fa "></span><a id="ButtonsHomePage" routerLink="/home">Home!</a></p>
-    <br>
-  </div>
-  <br>
+    
   <!--<app-karta></app-karta>-->
-</div>

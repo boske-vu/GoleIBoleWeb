@@ -1,4 +1,6 @@
   <!-- Kreiramo mapu -->
+  <br><br><br>
+  <div class="row" align="center">
   <agm-map [latitude]="markerInfo.location.latitude" [longitude]="markerInfo.location.longitude" [zoom]="18" (mapClick)="placeMarker($event)">  
 
     <agm-marker [latitude]="markerInfo.location.latitude" [longitude]="markerInfo.location.longitude" [title]="markerInfo.title"
@@ -28,13 +30,22 @@
     <agm-marker *ngFor="let point of polylineMoje.path" [latitude]="point.latitude" [longitude]="point.longitude" [iconUrl]="polylineMoje.icon">
     </agm-marker>
   </agm-map>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-sm-5">
+      <select [(ngModel)]="selectedLine" class="form-control">
+          <option *ngFor="let l of lines">
+            {{l}} 
+          </option>
+        </select>
+  </div>
+  <div class="col-sm-1">
+      <button class="btn btn-primary" (click)="ShowStanica()">Kordinate</button>
+  </div>
+  <div class="col-sm-2">
+      <button class="btn btn-outline-danger" (click)="HideStanica()">Ukloni</button>
 
-  <select [(ngModel)]="selectedLine">
-    <option *ngFor="let l of lines">
-      {{l}} 
-    </option>
-  </select>
-
-  <button id="ButtonsHomePage" (click)="ShowStanica()">Kordinate</button>
-  <button id="ButtonsHomePage" (click)="HideStanica()">Ukloni</button>
-
+  </div>
+</div>
+  

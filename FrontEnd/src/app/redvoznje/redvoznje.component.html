@@ -5,7 +5,7 @@
     <div class="col-sm-2">Red voznje:</div>
     <div class="col-sm-4">
       <select
-        class="listbox uk-dropdown-grid"
+        class="form-control"
         id="rv"
         [(ngModel)]="selectedTeritorija"
       >
@@ -18,8 +18,8 @@
 
   <div class="row">
     <div class="col-sm-2">Dan</div>
-    <div class="col-sm-6">
-      <select class="listbox" id="dan" [(ngModel)]="selectedDan">
+    <div class="col-sm-4">
+      <select class="form-control" id="dan" [(ngModel)]="selectedDan">
         <option value="1" selected="">Radni dan</option>
         <option value="2">Subota</option>
         <option value="3">Nedelja</option>
@@ -30,8 +30,8 @@
 
   <div class="row">
     <div class="col-sm-2">Linija:</div>
-    <div class="col-sm-10">
-      <select id="linija" class="listbox" [(ngModel)]="selectedLinija">
+    <div class="col-sm-6">
+      <select id="linija" class="form-control" [(ngModel)]="selectedLinija">
         <option value="1" selected="">1 KLISA-CENTAR-LIMAN I</option>
         <option value="2">2 CENTAR - NOVO NASELJE</option>
         <option value="3">3 PETROVARADIN-CENTAR-DETELINARA</option>
@@ -44,18 +44,31 @@
         <option value="10">10 CENTAR-INDUST.ZONA JUG</option>
       </select>
     </div>
+    <div class="col-sm-2">
+        <button
+        class="btn btn-primary"
+        id="blue-button"
+        (click)="onGetPrikazPolazaka()"
+      >
+        Prikazi
+      </button>
+    </div>
   </div>
   <hr />
 
   <div>
-    <button
-      class="btn btn-primary"
-      id="blue-button"
-      (click)="onGetPrikazPolazaka()"
-    >
-      Prikazi
-    </button>
+    
   </div>
 </div>
-Polasci sa stanice:<br />
-{{ polasci }}
+<br>
+<div class="row">
+  <div class="col-sm-3">
+      Polasci sa stanice:
+  </div>
+  <div class="col-sm-5 alert-info">
+      {{ polasci }}
+  </div>
+</div>
+
+
+

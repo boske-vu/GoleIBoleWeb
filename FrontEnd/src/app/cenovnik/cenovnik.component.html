@@ -1,17 +1,39 @@
-<p>
-  <select [(ngModel)]="selectedTip">
-    <option *ngFor="let t of karte">
-      {{ t }}
-    </option>
-  </select>
+<br><br><br>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-4">
+      <select [(ngModel)]="selectedTip" class="form-control">
+          <option *ngFor="let t of karte">
+            {{ t }}
+          </option>
+        </select>
+  </div>
+  <div class="col-sm-3">
+      <button (click)="getCenaKarte()" class="btn btn-outline-primary">Prikazi cenu ove karte!</button>
+  </div>
+</div>
+
+  <br><br>
+  <div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-3">Cena karte: {{ cena }}</div>
+  </div>
+
   <br />
-  <button (click)="getCenaKarte()">Prikazi cenu ove karte!</button>
-  <br />
-  Cena karte: {{ cena }}
-  <br />
-  <button (click)="kupiKartu()">Kupi kartu!</button>
   <br>
-          <app-paypal></app-paypal>
+  <br />
+  <br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3">
+      <button (click)="kupiKartu()" class="btn btn-success">Kupi kartu!</button>
+    </div>
+    <div class="col-sm-3">
+        <app-paypal></app-paypal>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <br>
+          
   <br/>
   {{ kupljena }}
-</p>
