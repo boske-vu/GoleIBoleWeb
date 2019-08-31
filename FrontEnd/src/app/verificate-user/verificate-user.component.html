@@ -1,14 +1,24 @@
-<select [(ngModel)]="selectedUser">
-  <option *ngFor="let t of users">
-    {{t.UserName}} 
-  </option>
-</select>
+<br><br><br>
+<div class="row">
+  <div class="col-sm-5">
+      <select [(ngModel)]="selectedUser" class="form-control">
+          <option *ngFor="let t of users">
+            {{t.UserName}} 
+          </option>
+        </select>
+  </div>
+  <div class="col-sm-3">
+      <button (click)="PrikaziInfo()" class="btn btn-primary"> Prikazi informacije </button>
+
+  </div>
+</div>
+
 <br/>
 <br/>
 
-<button (click)="PrikaziInfo()"> Prikazi informacije </button>
 
 <h4>Profil selektovanog korisnika</h4>
+<br>
 <div class="verificate-user-form" style="width: 400px;">
   <form [formGroup]="infoForm">
     <div class="form-group row">
@@ -69,8 +79,14 @@
 
 <br/>
 <br/>
-<button (click)="Prihvati()"> Prihvati zahtev </button>
-<br/>
-<button (click)="Odbij()"> Odbij zahtev </button>
-<br/>
-{{odluka}}
+<div class="row">
+  <div class="col-sm-3">
+      <button (click)="Prihvati()" class="btn btn-primary"> Prihvati zahtev </button>
+  </div>
+  <div class="col-sm-3">
+      <button (click)="Odbij()" class="btn btn-danger"> Odbij zahtev </button>
+  </div>
+  <div class="col-sm-3">
+      <h3>Odluka: {{odluka}}</h3>
+  </div>
+</div>

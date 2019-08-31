@@ -1,7 +1,26 @@
+<br><br><br>
+
+
 <form [formGroup]="verificationForm" (submit)="checkId()">
-  ID karte:<br>
-  <input Placeholder="Id" type="text" formControlName="Id" required>
-  <br><br>
-  <input type="submit" value="Proveri">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">ID karte:</div>
+        <div class="col-sm-4">
+          <input class="form-control" Placeholder="Id" type="text" formControlName="Id" required>
+        </div>
+
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-3">
+            <input class="btn btn-outline-primary" type="submit" value="Proveri">
+        </div>
+      </div>
 </form> 
-Status: {{message}}
+<br><br>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2">Status karte:</div>
+  <div class="col-sm-5 alert-info">{{message}}</div>
+</div>
