@@ -13,7 +13,7 @@ export class Polyline {
     }
 
     addLocation(location: GeoLocation){
-        this.path.pop();
+        // this.path.pop();
         this.path.push(location);
     }
 }

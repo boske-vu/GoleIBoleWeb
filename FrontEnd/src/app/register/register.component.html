@@ -1,6 +1,6 @@
 
 <form [formGroup]="registacijaForm" (submit)="register()">
-     
+  <fieldset class="clearfix">
       <!-- <div class="row">
       <div class="col-md-3">
       <p>Name:</p><span class="fa fa-user"></span><br/>
@@ -37,11 +37,18 @@
       <p>Email:<span class="fa fa-user"></span><input Placeholder="Email" type="email" formControlName="Email" required></p><br>
       <p>Address:<span class="fa fa-user"></span><input Placeholder="Address" type="email" formControlName="Address" required></p><br>
       <p>Date:<span class="fa fa-user"></span><input Placeholder="Date" type="date" formControlName="Date" required></p><br>
-      <p>PhoneNumber:<span class="fa fa-user"></span><input Placeholder="PhoneNumber" type="text" formControlName="PhoneNumber" required></p><br>      
+      <p>PhoneNumber:<span class="fa fa-user"></span><input Placeholder="PhoneNumber" type="text" formControlName="PhoneNumber" required></p><br>    
+      <select [(ngModel)]="tipKorisnika" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let t of tipoviKorisnika">
+          {{t}} 
+        </option>
+      </select>  
       <div class="form-group row">
         <input type="file" formControlName="ImageUrl" (change)="onFileSelected($event)" />
       </div>
       <div>
           <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Register"></span>
       </div>
+      </fieldset>
+      <div class="clearfix"></div>
 </form>

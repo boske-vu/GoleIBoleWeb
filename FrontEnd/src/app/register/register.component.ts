@@ -24,6 +24,10 @@ export class RegisterComponent implements OnInit {
     Date: ['', Validators.required]
   });
   
+  tipKorisnika: string
+
+  tipoviKorisnika: string[] = ["Đak","Penzioner","Regularan"]
+
   selectedFile: File = null;
   onFileSelected(event) {
     this.selectedFile = <File>event.target.files[0];
@@ -36,6 +40,23 @@ export class RegisterComponent implements OnInit {
 
   register(){
     let regModel: User = this.registacijaForm.value;
+
+    console.log(this.tipKorisnika);
+    if(this.tipKorisnika == "Đak")
+    {
+      regModel.TypeId = "1"
+    }
+    else if(this.tipKorisnika == "Penzioner")
+    {
+      regModel.TypeId = "2"
+
+    }
+    else 
+    {
+      regModel.TypeId = "3"
+
+    }
+
     let formData: FormData = new FormData();
 
     if (this.selectedFile != null) {
@@ -47,7 +68,7 @@ export class RegisterComponent implements OnInit {
       {
         if (this.selectedFile != null) {
           this.http.uploadImage(formData, regModel.UserName).subscribe(ret => {
-            alert("Unseccesfull!!!");
+            alert("Uspesno ste se registrovali! Da biste kupili kartu morate da sacekate da Vas profil bude aktiviran");
             this.router.navigate(["/home"]);
           },
             err => console.log(err));
