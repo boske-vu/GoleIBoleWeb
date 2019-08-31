@@ -8,10 +8,12 @@ export class Polyline {
     constructor(path: GeoLocation[], color: string, icon: any){
         this.color = color;
         this.path = path;
-        this.icon = icon
+        this.icon = icon;
+        
     }
 
     addLocation(location: GeoLocation){
-        this.path.push(location)
+        this.path.pop();
+        this.path.push(location);
     }
 }

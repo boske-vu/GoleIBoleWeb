@@ -99,6 +99,8 @@ export class LineComponent implements OnInit {
      });
   }
 
+
+
   AddLine(){
     this.newLine.SerialNumber = this.serNum;
     this.newLine.StationsAdd = this.StationsAdd;

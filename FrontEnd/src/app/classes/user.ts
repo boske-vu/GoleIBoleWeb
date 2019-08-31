@@ -13,3 +13,21 @@ export class User{
     ImageUrl: string;
     Verificate: number;
 }
+
+export class raspored{
+    polasci: string
+}
+
+export class klasaPodaci{
+    id:number;
+    dan:string;
+}
+export class linja{
+    linije:number[];
+}
+export class LinijaZaHub{
+    imeLinije:string;
+    constructor(i:string){
+        this.imeLinije=i;
+    }
+}

@@ -27,8 +27,8 @@ export class PaypalComponent implements OnInit {
       paypal.Button.render({
         env: 'sandbox',
         client: {
-          production: 'goran.pavicevic.96-facilitator@gmail.com',
-          sandbox: 'AYzNBVp9wSbvxR_BVTKgq5HPkTIMY8gV5ON31ANKMYc-DgqVk3GLGwwK9LnJeHDGYTeqMvJGOm40L27A',
+          production: 'sb-il7hy120462@business.example.com',
+          sandbox: 'AZXC4ZzNSm5Eabby-0FIOO_Y40nNSsPHbC5RVm9gkEE6p5qke3oFc4BUKECEK909sgHVLlZFmzC8TshI',
           
         },
         commit: true,

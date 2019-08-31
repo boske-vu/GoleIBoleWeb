@@ -2,6 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+ 
   "projects": {
     "vezba3test": {
       "projectType": "application",
@@ -25,7 +26,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "src/assets/jquery.signalR-2.4.1.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -113,7 +117,10 @@
             }
           }
         }
+        
       }
     }},
   "defaultProject": "vezba3test"
+
+  
 }

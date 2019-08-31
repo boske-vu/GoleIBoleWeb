@@ -254,6 +254,7 @@
     <Compile Include="Controllers\CenovnikController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LineController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\PriceListEditController.cs" />
     <Compile Include="Controllers\ProfilController.cs" />
     <Compile Include="Controllers\RedVoznjeController.cs" />
@@ -263,6 +264,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Hubs\LokacijaVozilaHub.cs" />
     <Compile Include="Migrations\201905222056072_InitialMigration.cs" />
     <Compile Include="Migrations\201905222056072_InitialMigration.Designer.cs">
       <DependentUpon>201905222056072_InitialMigration.cs</DependentUpon>

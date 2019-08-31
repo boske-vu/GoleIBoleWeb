@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LinijaZaHub } from 'src/app/classes/user';
 import { User } from '../../classes/user';
 
 @Injectable()
@@ -97,4 +98,15 @@ export class AuthHttpService{
             });
         });
     }
+
+    StanicaZaHub(lin: LinijaZaHub):Observable<any>
+  {
+
+    let httpOptions = {
+      headers: {
+        "Content-type":"application/json"
+      }
+    }
+    return this.http.post<any>(this.base_url+ "/api/Location/StaniceZaHub", lin, httpOptions);
+  }
 }
