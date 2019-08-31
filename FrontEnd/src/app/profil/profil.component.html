@@ -1,4 +1,7 @@
+<br/>
 <h4>Profil</h4>
+<br/>
+<br/>
 <div class="profile-form" style="width: 400px;">
   <form [formGroup]="updateForm" (ngSubmit)="UpdateUser()">
     <div class="form-group row">
@@ -104,10 +107,19 @@
         />
       </div>
     </div>
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-secondary">Izmeni</button>
-      <br />
-      {{ message }}
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+          <button type="submit" class="btn btn-secondary">Izmeni</button>
+          <br />
+          <br/>
+          <div>
+            <label class="alert-success font-weight-bold">{{ message }}
+            </label>
+          </div>
+          
+        </div>
     </div>
+    
   </form>
 </div>

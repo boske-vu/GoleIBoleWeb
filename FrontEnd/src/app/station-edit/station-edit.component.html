@@ -1,48 +1,55 @@
-<h1><b>ISPIS STANICE (BRISANJE I IZMENA SELEKTOVANIH STANICA) I ISPIS NJENIH LINIJA</b></h1>
-<select [(ngModel)]="selectedStation">
+<h1 align="center"><b>ISPIS STANICE (BRISANJE I IZMENA SELEKTOVANIH STANICA) I ISPIS NJENIH LINIJA</b></h1>
+<hr>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-md-4">
+<select [(ngModel)]="selectedStation" class="form-control">
   <option *ngFor="let t of stations">
     {{t}} 
   </option>
 </select>
-<br/>
-<button (click)="getSelectedStation()"> Prikazi Stanicu! </button>
+</div>
+<div class="col-md-4">
+<button (click)="getSelectedStation()" class="btn btn-primary"> Prikazi Stanicu! </button>
+</div>
+</div>
 <br/>
 <form [formGroup]="stationForm" (ngSubmit)="UpdateStation()">
   <div class="form-group row">
     <label for="Name" class="col-sm-2 col-form-label">Ime stanice:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="Name" id="Name"> 
+      <input type="text" class="form-control col-sm-5" formControlName="Name" id="Name"> 
     </div>
     <label for="Address" class="col-sm-2 col-form-label">Adresa:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="Address" id="Address"> 
+      <input type="text" class="form-control col-sm-5" formControlName="Address" id="Address"> 
     </div>
     <label for="X" class="col-sm-2 col-form-label">X:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="X" id="X"> 
+      <input type="text" class="form-control col-sm-5" formControlName="X" id="X"> 
     </div>
     <label for="Y" class="col-sm-2 col-form-label">Y:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="Y" id="Y"> 
+      <input type="text" class="form-control col-sm-5" formControlName="Y" id="Y"> 
     </div>
   </div>
-  <div class="col-sm-10">
-    <button type="submit" class="btn btn-secondary">Izmeni</button>
-    <br/>
+  <div class="row">
+  <div class="col-sm-6">
+    <button type="submit" class="btn btn-outline-dark">Izmeni</button>
   </div>
+  <div class="col-sm-5">
+  <button (click)="deleteSelectedStation()" class="btn btn-danger"> Obrisi stanicu </button>
+</div>
+</div>
 </form>
-<br/>
-<br/>
-<button (click)="deleteSelectedStation()"> Obrisi stanicu </button>
-<br/>
-<br/>
-<select [(ngModel)]="selectedLine">
+<hr/>
+<select [(ngModel)]="selectedLine" class="form-control col-sm-3">
   <option *ngFor="let t of lines">
     {{t}} 
   </option>
 </select>
 <br/>
-<button (click)="getSelectedLine()"> Prikazi liniju! </button>
+<button (click)="getSelectedLine()" class="btn btn-primary"> Prikazi liniju! </button>
 <br/>
 <form [formGroup]="lineForm" (ngSubmit)="IzmeniLiniju()">
   <div class="form-group row">
@@ -52,35 +59,47 @@
     </div>
   </div>
 </form>
-
-<h1><b>DODAVANJE LINIJA</b></h1>
+<hr/>
+<br/>
+<h1 align="center"><b>DODAVANJE LINIJA</b></h1>
 <br/>
 <br/>
-
-<label>Ime stanice:</label>
-<div class="col-sm-10">
-  <input type="text" [(ngModel)]="ime" name="ime" id="ime"> 
+<div class="row">
+  <label class="col-sm-2">Ime stanice:</label>
+  <input type="text" [(ngModel)]="ime" name="ime" id="ime" class="form-control col-sm-5"> 
 </div>
-<label>Adresa:</label>
-<div class="col-sm-10">
-  <input type="text" [(ngModel)]="adresa" name="adresa" id="adresa"> 
+<div class="row">
+  <label class="col-sm-2">Adresa:</label>
+  <input class="col-sm-5 form-control" type="text" [(ngModel)]="adresa" name="adresa" id="adresa"> 
 </div>
-<label>X:</label>
-<div class="col-sm-10">
-  <input type="text" [(ngModel)]="x" name="x" id="x"> 
+<div class="row">
+<label class="col-sm-2">X:</label>
+  <input class="col-sm-5 form-control" type="text" [(ngModel)]="x" name="x" id="x"> 
 </div>
-<label>Y:</label>
-<div class="col-sm-10">
-  <input type="text" [(ngModel)]="y" name="y" id="y"> 
+<div class="row">
+<label class="col-sm-2">Y:</label>
+  <input class="col-sm-5 form-control" type="text" [(ngModel)]="y" name="y" id="y"> 
 </div>
-<select [(ngModel)]="lineAddSelected">
+<br/>
+<div class="row">
+<div class="col-sm-2"></div>
+<select [(ngModel)]="lineAddSelected" class="form-control col-sm-5">
   <option *ngFor="let t of linesToChose">
     {{t}} 
   </option>
 </select>
+</div>
 <br/>
-  <button (click)="addLine()"> Dodaj liniju u stanicu </button>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-3">
+  <button (click)="addLine()" class="btn btn-outline-success"> Dodaj liniju u stanicu </button>
+</div>
+<div class="col-sm-3">
+<button (click)="AddStation()" class="btn btn-outline-success"> Dodaj Stanicu </button>
+</div>
+</div>
 <br/>
 <br/>
-  <button (click)="AddStation()"> Dodaj Stanicu </button>
+<br/>
 <br/>

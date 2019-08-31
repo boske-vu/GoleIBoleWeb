@@ -77,21 +77,23 @@
         href="http://localhost:4200/profil"
         >MOJ PROFIL</a
       >
-      <a
-        *ngIf="jwtIsUndefined()"
-        class="nav-item nav-active"
-        (click)="logout()"
-        href="http://localhost:4200/login"
-        >ODJAVI SE</a
-      >
+      
       
     </div>
     
   </div>
-  <ul class="nav navbar-nav navbar-right">
+  <ul class="nav navbar-nav navbar-right" *ngIf="!jwtIsAdmin() && !jwtIsController()">
 
       <li><a href="http://localhost:4200/register"><span class="glyphicon glyphicon-user"></span>Registruj se!</a></li>
         <br/>  
       <li><a href="http://localhost:4200/login"><span class="glyphicon glyphicon-log-in"></span>Prijavi se!</a></li>
+  
   </ul>
+  <a
+        *ngIf="jwtIsUndefined()"
+        class="nav-item nav-active navbar-nav navbar-right"
+        (click)="logout()"
+        href="http://localhost:4200/login"
+        >ODJAVI SE</a
+      >
 </nav>
