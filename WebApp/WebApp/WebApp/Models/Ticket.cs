@@ -17,5 +17,6 @@ namespace WebApp.Models
 
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
+        public string TransactionId { get; set; }
     }
 }

@@ -22,14 +22,6 @@ import { CardVerificationHttpService } from './services/cardVerification.service
 import { RedVoznjeHttpService } from './services/redvoznje.service';
 import { AgmCoreModule } from '@agm/core';
 import { BusLocationHttpService } from './services/busLocation.service';
-
-/*
-import { StationEditComponent } from './station-edit/station-edit.component';
-import { TimetableEditComponent } from './timetable-edit/timetable-edit.component';
-import { LineEditHttpService } from 'src/services/lineEdit.service';
-import { TimetableEditHttpService } from 'src/services/timetableEdit.service';
-import { StationEditHttpService } from 'src/services/stationEdit.service';
-*/
 import { from } from 'rxjs';
 import { AuthGuardAdmin } from './services/http/auth.guard';
 import { AuthGuardController } from './services/http/auth2.guard';
@@ -84,8 +76,6 @@ const routes : Routes = [
     PriceListEditComponent,
     MapComponent,
     BusLocationComponent
-    ///StationEditComponent,
-   // TimetableEditComponent,
     
   ],
   imports: [

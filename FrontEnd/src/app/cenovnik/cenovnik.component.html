@@ -28,8 +28,8 @@
     <div class="col-sm-3">
       <button (click)="kupiKartu()" class="btn btn-success">Kupi kartu!</button>
     </div>
-    <div class="col-sm-3">
-        <app-paypal></app-paypal>
+    <div *ngIf="cena1 != ''; else logOut">
+      <app-paypal [cenaKarte]="cena1"></app-paypal>
     </div>
     <div class="col-sm-3"></div>
   </div>

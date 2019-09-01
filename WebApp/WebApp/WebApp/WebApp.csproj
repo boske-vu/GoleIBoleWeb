@@ -285,6 +285,10 @@
     <Compile Include="Migrations\201908281946205_baza.Designer.cs">
       <DependentUpon>201908281946205_baza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908312338152_paypal.cs" />
+    <Compile Include="Migrations\201908312338152_paypal.Designer.cs">
+      <DependentUpon>201908312338152_paypal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -398,6 +402,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UploadFile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -443,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908281946205_baza.resx">
       <DependentUpon>201908281946205_baza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908312338152_paypal.resx">
+      <DependentUpon>201908312338152_paypal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

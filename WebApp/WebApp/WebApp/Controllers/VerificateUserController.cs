@@ -26,10 +26,6 @@ namespace WebApp.Controllers
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
 
-        //var userStore = new UserStore<ApplicationUser>(db);
-        //var userManager = new UserManager<ApplicationUser>(userStore);
-        //List<ApplicationUser> list = userManager.Users.ToList();
-
         public VerificateUserController() { }
 
         public VerificateUserController(IUnitOfWork db)
@@ -201,9 +197,5 @@ namespace WebApp.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-
-
     }
 }

@@ -28,6 +28,7 @@ export class AuthHttpService{
                 let decodedJwtJsonData = window.atob(jwtData)
                 let decodedJwtData = JSON.parse(decodedJwtJsonData)
 
+
                 let role = decodedJwtData.role
         
                 console.log('jwtData: ' + jwtData)
@@ -36,6 +37,7 @@ export class AuthHttpService{
                 console.log('Role ' + role)
                 localStorage.setItem("role", role);
                 localStorage.setItem("loggedUser",username);
+                
                 observer.next("uspesno");
                 observer.complete();
                /* localStorage.jwt = data.access_token;
@@ -109,4 +111,14 @@ export class AuthHttpService{
     }
     return this.http.post<any>(this.base_url+ "/api/Location/StaniceZaHub", lin, httpOptions);
   }
+
+  SacuvajTransakciju(idTransakcije: string): Observable<any>{ //ili prosiriti kontroler za kupovinu karte pa i id transakcije staviti u istu tabelu Kartas
+    return this.http.get<any>(this.base_url + "/api/Cenovnik/TransakcijaKarta?idTransakcije=" + idTransakcije);
+    // let httpOptions = {
+    //     headers:{
+    //       "Content-type":"application/json"
+    //     }
+    //   } 
+    //return this.http.post<any>(this.base_url + "/api/Kartas/PostTransakcijaID", idTransakcije, httpOptions); //nece da radi 
+    }
 }

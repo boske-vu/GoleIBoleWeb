@@ -12,8 +12,11 @@ export class Polyline {
         
     }
 
-    addLocation(location: GeoLocation){
-        this.path.pop();
+    addLocation(location: GeoLocation, promena: boolean){
+        if(promena){
+            this.path.pop();
+        }
+        
         this.path.push(location);
     }
 }
