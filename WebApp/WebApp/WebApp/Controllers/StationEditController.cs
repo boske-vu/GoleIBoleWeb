@@ -257,37 +257,48 @@ namespace WebApp.Controllers
         [Route("api/StationEdit/DeleteSelectedStation/{id}")]
         public IHttpActionResult DeleteSelectedStation(int id)
         {
-            List<Station> stations = new List<Station>();
-            Station ret = new Station();
-            stations = Db.stationRepository.GetAll().ToList();
+            //List<Station> stations = new List<Station>();
+            //Station ret = new Station();
+            //stations = Db.stationRepository.GetAll().ToList();
 
-            foreach (Station l in stations)
+            //foreach (Station l in stations)
+            //{
+            //    if (l.Id.Equals(id))
+            //    {
+            //        ret = l;
+            //        break;
+            //    }
+            //}
+
+            Station stanica = db.Station.Where(x => x.Id == id).FirstOrDefault();
+            if(stanica == null)
             {
-                if (l.Id.Equals(id))
-                {
-                    ret = l;
-                    break;
-                }
+                return NotFound();
             }
 
-            if (ret != null)
-            {
+            db.Station.Remove(stanica);
+            db.SaveChanges();
 
-                db.Entry(ret).State = EntityState.Deleted;
+            return Ok("uspesno");
 
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException e)
-                {
-                    return StatusCode(HttpStatusCode.BadRequest);
-                }
+            //if (ret != null)
+            //{
+            //    Db.stationRepository.Remove(ret);
+            //    //db.Station.Remove(ret);
 
-                return Ok("uspesno");
-            }
-            else
-                return StatusCode(HttpStatusCode.BadRequest);
+            //    try
+            //    {
+            //        db.SaveChanges();
+            //    }
+            //    catch (DbUpdateConcurrencyException e)
+            //    {
+            //        return StatusCode(HttpStatusCode.BadRequest);
+            //    }
+
+            //    return Ok("uspesno");
+            //}
+            //else
+            //    return StatusCode(HttpStatusCode.BadRequest);
 
         }
 

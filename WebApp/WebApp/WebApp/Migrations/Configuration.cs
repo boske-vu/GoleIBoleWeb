@@ -187,22 +187,22 @@
                 context.SaveChanges();
             }
 
-            // Stations
-            if (!context.Station.Any(t => t.Name == "Prva"))
-            {
-                Station station = new Station() { Id = 1, Name = "Prva", Address = "Adresa Prve", X = 22, Y = 35 };
-                context.Station.Add(station);
-                context.SaveChanges();
-            }
+            //// Stations
+            //if (!context.Station.Any(t => t.Name == "Prva"))
+            //{
+            //    Station station = new Station() { Id = 1, Name = "Prva", Address = "Adresa Prve", X = 22, Y = 35 };
+            //    context.Station.Add(station);
+            //    context.SaveChanges();
+            //}
 
-            if (!context.Station.Any(t => t.Name == "Druga"))
-            {
-                Station station = new Station() { Id = 1, Name = "Prva", Address = "Adresa Druge", X = 22, Y = 35 };
-                context.Station.Add(station);
-                context.SaveChanges();
-            }
+            //if (!context.Station.Any(t => t.Name == "Druga"))
+            //{
+            //    Station station = new Station() { Id = 1, Name = "Prva", Address = "Adresa Druge", X = 22, Y = 35 };
+            //    context.Station.Add(station);
+            //    context.SaveChanges();
+            //}
 
-            //  line
+            ////  line
             if (!context.BusLine.Any(t => t.Id == 1))
             {
                 BusLine line = new BusLine() { Id = 1, SerialNumber = 1 };
@@ -222,18 +222,18 @@
                 context.BusLine.Add(line);
                 context.SaveChanges();
             }
-            if (!context.BusLine.Any(t => t.Id == 4))
-            {
-                BusLine line = new BusLine() { Id = 4, SerialNumber = 4 };
-                context.BusLine.Add(line);
-                context.SaveChanges();
-            }
-            if (!context.BusLine.Any(t => t.Id == 5))
-            {
-                BusLine line = new BusLine() { Id = 5, SerialNumber = 5 };
-                context.BusLine.Add(line);
-                context.SaveChanges();
-            }
+            //if (!context.BusLine.Any(t => t.Id == 4))
+            //{
+            //    BusLine line = new BusLine() { Id = 4, SerialNumber = 4 };
+            //    context.BusLine.Add(line);
+            //    context.SaveChanges();
+            //}
+            //if (!context.BusLine.Any(t => t.Id == 5))
+            //{
+            //    BusLine line = new BusLine() { Id = 5, SerialNumber = 5 };
+            //    context.BusLine.Add(line);
+            //    context.SaveChanges();
+            //}
 
             // Timetable
 
@@ -252,7 +252,7 @@
             }
             if (!context.Timetable.Any(t => t.Id == 3))
             {
-                Timetable timetable = new Timetable() { Id = 3, BusLineId = 1, TimetableTypeId = 1, DayTypeId = 2, Times = "9:10 10:10 11:10 12:10 13:10" };
+                Timetable timetable = new Timetable() { Id = 3, BusLineId = 3, TimetableTypeId = 1, DayTypeId = 2, Times = "9:10 10:10 11:10 12:10 13:10" };
                 context.Timetable.Add(timetable);
                 context.SaveChanges();
             }

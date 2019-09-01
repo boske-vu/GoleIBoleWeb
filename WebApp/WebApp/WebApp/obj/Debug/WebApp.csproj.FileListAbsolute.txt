@@ -604,13 +604,9 @@ C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\bin\Microsoft
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\bin\System.Web.Http.Owin.xml
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.InitialMigration.resources
-C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.novamigracija.resources
-C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.nm11.resources
-C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.novamig.resources
-C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.baza.resources
-C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.paypal.resources
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.cache
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.CoreCompileInputs.cache
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.CopyComplete
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
+C:\Users\boske\OneDrive\Desktop\GoleIBoleWeb2\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.novamiga.resources

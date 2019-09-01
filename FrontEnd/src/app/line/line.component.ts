@@ -48,7 +48,7 @@ export class LineComponent implements OnInit {
     });    
     this.http.getAllStations().subscribe((data) => {
       this.stationToChose = data;
-      this.stationAddSelected = this.stationToChose[5];
+      this.stationAddSelected = this.stationToChose[3];
       err => console.log(err);
     });
   }

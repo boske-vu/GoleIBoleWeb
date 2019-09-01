@@ -269,25 +269,9 @@
     <Compile Include="Migrations\201905222056072_InitialMigration.Designer.cs">
       <DependentUpon>201905222056072_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906122014007_novamigracija.cs" />
-    <Compile Include="Migrations\201906122014007_novamigracija.Designer.cs">
-      <DependentUpon>201906122014007_novamigracija.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908091747188_nm11.cs" />
-    <Compile Include="Migrations\201908091747188_nm11.Designer.cs">
-      <DependentUpon>201908091747188_nm11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908211541174_novamig.cs" />
-    <Compile Include="Migrations\201908211541174_novamig.Designer.cs">
-      <DependentUpon>201908211541174_novamig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908281946205_baza.cs" />
-    <Compile Include="Migrations\201908281946205_baza.Designer.cs">
-      <DependentUpon>201908281946205_baza.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908312338152_paypal.cs" />
-    <Compile Include="Migrations\201908312338152_paypal.Designer.cs">
-      <DependentUpon>201908312338152_paypal.cs</DependentUpon>
+    <Compile Include="Migrations\201909012111402_novamiga.cs" />
+    <Compile Include="Migrations\201909012111402_novamiga.Designer.cs">
+      <DependentUpon>201909012111402_novamiga.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -437,20 +421,8 @@
     <EmbeddedResource Include="Migrations\201905222056072_InitialMigration.resx">
       <DependentUpon>201905222056072_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906122014007_novamigracija.resx">
-      <DependentUpon>201906122014007_novamigracija.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908091747188_nm11.resx">
-      <DependentUpon>201908091747188_nm11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908211541174_novamig.resx">
-      <DependentUpon>201908211541174_novamig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908281946205_baza.resx">
-      <DependentUpon>201908281946205_baza.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908312338152_paypal.resx">
-      <DependentUpon>201908312338152_paypal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909012111402_novamiga.resx">
+      <DependentUpon>201909012111402_novamiga.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

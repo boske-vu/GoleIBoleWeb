@@ -89,7 +89,7 @@ export class StationEditComponent implements OnInit {
       }
       else
       {
-        alert("Vec postoji linija sa tim rednim brojem");
+        alert("neuspesno obrisana");
         this.router.navigate(["/stationEdit"]);
       }
       err => console.log(err);
