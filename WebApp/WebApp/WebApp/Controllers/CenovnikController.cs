@@ -173,31 +173,39 @@ namespace WebApp.Controllers
                 return StatusCode(HttpStatusCode.BadRequest);
             }
 
-            //SendEmail("GSP Service", "boske_woo@live.co.uk", user.Email, "GSP Service, kupovina karte.", $"uspesno");
-            string mejl = "goxserbians@gmail.com";
-            string email = mejl.Replace('-', '.');
-            MailMessage mail = new MailMessage("boske_woo@live.co.uk", email);
-            SmtpClient client = new SmtpClient();
-            client.Port = 2525;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = true;
-            client.Credentials = new NetworkCredential("boske_woo@live.co.uk", "qcfu xays czwu bopw");    //iymr rzbn gpfs bpbg
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.EnableSsl = true;
-            client.Host = "smtp.gmail.com";
 
-            mail.Subject = "JGSP";
-            mail.Body = $"Uspesno ste kupili kartu za {DateTime.Now}. {Environment.NewLine} Broj karte: {Environment.NewLine}Hvala na poverenju, JGSP!";
+            string mailSubject = "JGSP";
+            string mailBody = $"Uspesno ste kupili kartu: Hvala na poverenju, JGSP!";
             try
             {
-                client.Send(mail);
+                Send(user.Email, mailSubject, mailBody);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+            return Ok("uspesno");
+        }
+
+        public static void Send(string to, string subject, string body)
+        {
+            MailMessage mailMessage = new MailMessage("golebole.web@gmail.com", to, subject, body);
+            mailMessage.IsBodyHtml = true;
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.UseDefaultCredentials = true;
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.Host = "smtp.gmail.com";
+            smtpClient.Port = 587;
+            smtpClient.EnableSsl = true;
+            smtpClient.Credentials = new NetworkCredential("golebole.web@gmail.com", "proba123!");
+            try
+            {
+                smtpClient.Send(mailMessage);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return InternalServerError(e);
+                string a = e.Message;
             }
-            return Ok("uspesno");
         }
 
         [AllowAnonymous]
@@ -237,37 +245,6 @@ namespace WebApp.Controllers
             return Ok("sacuvano");
         }
 
-
-
-        //private void SendEmail(string sendername, string sender, string recipient, string subject, string body)
-        //{
-        //    // SMTP server,port,username,password should be obtained from C:\cornerstone\CFMLocal.txt (line 2?)
-        //    SmtpClient smtpClient = new SmtpClient("smtp.mailtrap.io", 587)
-        //    {
-        //        // Milan's mail trap free SMTP credentials : u: "3af75f9040edca", p: "bc2ed058a47d71"  | host: "smtp.mailtrap.io", 2525
-        //        Credentials = new System.Net.NetworkCredential()
-        //        {
-        //            //UserName = "3af75f9040edca",
-        //            //Password = "bc2ed058a47d71"
-        //            UserName = "boske_woo@live.co.uk",
-        //            Password = "vutra96,"
-        //        },
-
-        //        EnableSsl = true
-        //    };
-
-        //    MailAddress from = new MailAddress(sender, sendername);
-        //    MailAddress to = new MailAddress(recipient, "");
-        //    MailMessage mailMessage = new MailMessage(from, to)
-        //    {
-        //        Subject = subject,
-        //        Body = body
-        //    };
-
-
-
-        //    smtpClient.Send(mailMessage);
-        //}
 
         private bool KartaExists(int id)
         {
