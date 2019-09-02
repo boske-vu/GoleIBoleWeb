@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -166,39 +167,51 @@ namespace WebApp.Controllers
         [Route("api/LineEdit/DeleteSelectedLine/{serial}")]
         public IHttpActionResult DeleteSelectedLine(string serial)
         {
-            List<BusLine> line = new List<BusLine>();
-            BusLine ret = new BusLine();
-            line = Db.busLineRepository.GetAll().ToList();
-            int serialNumber = Int32.Parse(serial);
 
-            foreach (BusLine l in line)
+            BusLine busLine = db.BusLine.Where(x => x.SerialNumber.ToString() == serial).FirstOrDefault();
+            if (busLine == null)
             {
-                if (l.SerialNumber.Equals(serialNumber))
-                {
-                    ret = l;
-                    break;
-                }
+                return NotFound();
             }
 
-            if (ret != null)
-            {
+            db.BusLine.Remove(busLine);
+            db.SaveChanges();
+
+            return Ok("uspesno");
+
+            //List<BusLine> line = new List<BusLine>();
+            //BusLine ret = new BusLine();
+            //line = Db.busLineRepository.GetAll().ToList();
+            //int serialNumber = Int32.Parse(serial);
+
+            //foreach (BusLine l in line)
+            //{
+            //    if (l.SerialNumber.Equals(serialNumber))
+            //    {
+            //        ret = l;
+            //        break;
+            //    }
+            //}
+
+            //if (ret != null)
+            //{
                 
 
-                db.Entry(ret).State = EntityState.Deleted;
+            //    db.Entry(ret).State = EntityState.Deleted;
 
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException e)
-                {
-                    return StatusCode(HttpStatusCode.BadRequest);
-                }
+            //    try
+            //    {
+            //        db.SaveChanges();
+            //    }
+            //    catch (DbUpdateConcurrencyException e)
+            //    {
+            //        return StatusCode(HttpStatusCode.BadRequest);
+            //    }
 
-                return Ok("uspesno");
-            }
-            else
-                return StatusCode(HttpStatusCode.BadRequest);
+            //    return Ok("uspesno");
+            //}
+            //else
+            //    return StatusCode(HttpStatusCode.BadRequest);
 
         }
 
@@ -260,9 +273,9 @@ namespace WebApp.Controllers
         {
             BusLine lin = Db.busLineRepository.GetAll().Where(x => x.SerialNumber.ToString() == linija).FirstOrDefault();
             Station sta = Db.stationRepository.GetAll().Where(x => x.Name == stanica).FirstOrDefault();
-            lin.Stations = new List<Station>();
+            lin.Stations = new Collection<Station>();
             lin.Stations.Add(sta);
-            sta.Lines = new List<BusLine>();
+            sta.Lines = new Collection<BusLine>();
             sta.Lines.Add(lin);
             Db.stationRepository.Update(sta);
             Db.busLineRepository.Update(lin);

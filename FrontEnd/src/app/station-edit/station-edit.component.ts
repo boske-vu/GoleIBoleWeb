@@ -67,7 +67,7 @@ export class StationEditComponent implements OnInit {
     });
     this.http.getLines(this.selectedStation).subscribe((data) => {
       this.lines = data;
-      this.selectedLine = this.lines[0];
+      this.selectedLine = this.lines[3];
       err => console.log(err);
     });
   }
@@ -81,7 +81,7 @@ export class StationEditComponent implements OnInit {
   }
 
   deleteSelectedStation(){
-    this.http.deleteSelectedStation(this.idStation).subscribe((data) => {
+    this.http.deleteSelectedStation(this.selectedStation).subscribe((data) => {
       if(data == "uspesno")
       {
         alert("Uspesno obrisana linija");

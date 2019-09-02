@@ -1,4 +1,4 @@
-<h1 align="center"><b>ISPIS STANICE (BRISANJE I IZMENA SELEKTOVANIH STANICA) I ISPIS NJENIH LINIJA</b></h1>
+<h1 align="center"><b>IZMENA STANICA</b></h1>
 <hr>
 <div class="row">
   <div class="col-sm-2"></div>
@@ -9,9 +9,13 @@
   </option>
 </select>
 </div>
-<div class="col-md-4">
-<button (click)="getSelectedStation()" class="btn btn-primary"> Prikazi Stanicu! </button>
+<div class="col-md-3">
+    <button (click)="getSelectedStation()" class="btn btn-primary"> Prikazi Stanicu! </button>
+    </div>
+<div class="col-sm-3">
+  <button (click)="deleteSelectedStation()" class="btn btn-danger"> Obrisi stanicu </button>
 </div>
+
 </div>
 <br/>
 <form [formGroup]="stationForm" (ngSubmit)="UpdateStation()">
@@ -37,13 +41,11 @@
   <div class="col-sm-6">
     <button type="submit" class="btn btn-outline-dark">Izmeni</button>
   </div>
-  <div class="col-sm-5">
-  <button (click)="deleteSelectedStation()" class="btn btn-danger"> Obrisi stanicu </button>
-</div>
+  
 </div>
 </form>
 <hr/>
-<select [(ngModel)]="selectedLine" class="form-control col-sm-3">
+<!-- <select [(ngModel)]="selectedLine" class="form-control col-sm-3">
   <option *ngFor="let t of lines">
     {{t}} 
   </option>
@@ -59,9 +61,9 @@
     </div>
   </div>
 </form>
-<hr/>
+<hr/> -->
 <br/>
-<h1 align="center"><b>DODAVANJE LINIJA</b></h1>
+<h1 align="center"><b>DODAVANJE STANICA</b></h1>
 <br/>
 <br/>
 <div class="row">
@@ -83,18 +85,18 @@
 <br/>
 <div class="row">
 <div class="col-sm-2"></div>
-<select [(ngModel)]="lineAddSelected" class="form-control col-sm-5">
+<!-- <select [(ngModel)]="lineAddSelected" class="form-control col-sm-5">
   <option *ngFor="let t of linesToChose">
     {{t}} 
   </option>
-</select>
+</select> -->
 </div>
 <br/>
 <div class="row">
   <div class="col-sm-2"></div>
-  <div class="col-sm-3">
+  <!-- <div class="col-sm-3">
   <button (click)="addLine()" class="btn btn-outline-success"> Dodaj liniju u stanicu </button>
-</div>
+</div> -->
 <div class="col-sm-3">
 <button (click)="AddStation()" class="btn btn-outline-success"> Dodaj Stanicu </button>
 </div>

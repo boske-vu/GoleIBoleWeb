@@ -115,21 +115,27 @@ namespace WebApp.Controllers
         [Route("api/StationEdit/GetSelectedStation/{name}")]
         public IHttpActionResult GetSelectedStation(string name)
         {
-            List<Station> stations = new List<Station>();
-            Station ret = new Station();
-            stations = Db.stationRepository.GetAll().ToList();
-
-            foreach (Station l in stations)
+            Station stanica = db.Station.Where(x => x.Name == name).FirstOrDefault();
+            if (stanica == null)
             {
-                if (l.Name.Equals(name))
-                {
-                    ret = l;
-                    break;
-                }
+                return NotFound();
             }
 
-            if (ret != null)
-                return Ok(ret);
+            //List<Station> stations = new List<Station>();
+            //Station ret = new Station();
+            //stations = Db.stationRepository.GetAll().ToList();
+
+            //foreach (Station l in stations)
+            //{
+            //    if (l.Name.Equals(name))
+            //    {
+            //        ret = l;
+            //        break;
+            //    }
+            //}
+
+            if (stanica != null)
+                return Ok(stanica);
             else
                 return StatusCode(HttpStatusCode.BadRequest);
 
@@ -255,7 +261,7 @@ namespace WebApp.Controllers
         [Authorize(Roles = "Admin")]
         [ResponseType(typeof(string))]
         [Route("api/StationEdit/DeleteSelectedStation/{id}")]
-        public IHttpActionResult DeleteSelectedStation(int id)
+        public IHttpActionResult DeleteSelectedStation(string id)
         {
             //List<Station> stations = new List<Station>();
             //Station ret = new Station();
@@ -270,7 +276,7 @@ namespace WebApp.Controllers
             //    }
             //}
 
-            Station stanica = db.Station.Where(x => x.Id == id).FirstOrDefault();
+            Station stanica = db.Station.Where(x => x.Name == id).FirstOrDefault();
             if(stanica == null)
             {
                 return NotFound();

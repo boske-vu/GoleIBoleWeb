@@ -75,7 +75,7 @@ export class StationEditHttpService{
         });     
     }
 
-    deleteSelectedStation(id: number) : Observable<any>{
+    deleteSelectedStation(id: string) : Observable<any>{
         return Observable.create((observer) => {    
             this.http.delete<any>(this.base_url + "/api/StationEdit/DeleteSelectedStation/" + id).subscribe(data =>{
                 observer.next(data);
